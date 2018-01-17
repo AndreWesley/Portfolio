@@ -419,7 +419,6 @@ h6,
 .scrollToTop_wraper {
   opacity: 0 !important;
 }
-<<<<<<< HEAD
 #header3-15 .mbr-section-title,
 #header3-15 .mbr-section-subtitle {
   text-align: center;
@@ -427,12 +426,6 @@ h6,
 #header3-15 .mbr-section-subtitle {
   color: #2969b0;
 }
-=======
-#header3-13 .mbr-section-title,
-#header3-13 .mbr-section-subtitle {
-  text-align: center;
-}
->>>>>>> f2b61fd9688164e784b85e60cca1fcf4d82d9965
 #slider-w H2 {
   color: #3d8eb9;
   text-align: center;
