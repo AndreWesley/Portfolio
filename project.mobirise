@@ -117,7 +117,7 @@
                 "title": "Color Trick University",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "In this game you control a fresh one who finally ingress in the university, and in your first day the seniors students decided hazing the newbies. You are one of them, use your skateboard and jump over stones, increase or decrease your speed to avoid the ballons. To scores you need to get as many flags as you can.<br><b><br></b><b>Release: 2016</b><br><b>My role: lead programmer</b><br><b>Global Game Jam</b><br><b>Language: C# (Unity)<br></b>",
+                "text": "In this game you control a fresh one who finally ingress in the university, and in your first day the seniors students decided hazing the newbies. You are one of them, use your skateboard and jump over stones, increase or decrease your speed to avoid the ballons. To scores you need to get as many flags as you can.<br><br><b>Release: 2016</b><br><b>My role: lead programmer</b><br><b>Global Game Jam</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?id=0B8kHv1s5I6E5MU02REhzWjlJdEU&amp;export=download\" data-toolbar=\"-mbrBtnMove\">FOR WINDOWS</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?id=0B8kHv1s5I6E5MU02REhzWjlJdEU&amp;export=download\" data-toolbar=\"-mbrBtnMove\">GGJ Game Page</a> ",
                 "overlayOpacity": "0.7"
               },
@@ -147,7 +147,7 @@
                 "title": "SumoTech",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "This is a multiplayer competitive game where both players chooses the sumo fighters and go to arena facing each other with one goal, push the adversary out of the arena, be careful with back strikes, they are finishing blows. This game was created for a graduation competition event at the university.<br><br><b>Release: 2013<br>My role: programmer</b><br><b>Language: C# (Unity)<br></b>",
+                "text": "This is a multiplayer competitive game where both players chooses the sumo fighters and go to arena facing each other with one goal, push the adversary out of the arena, be careful with back strikes, they are finishing blows. This game was created for a graduation competition event at the university.<br><br><b>Release: 2013</b><br><b>My role: programmer<br>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?authuser=0&amp;id=0B8kHv1s5I6E5U3VVd3Q2d2p3MTA&amp;export=download\" data-toolbar=\"-mbrBtnMove\">FOR WINDOWS</a> ",
                 "overlayOpacity": "0.5"
               },
@@ -162,7 +162,7 @@
                 "title": "The Lost War (Prototype)",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "<b>In this prototype, you can create a new character by spreading points into character's characteristics that updates a web chart after each adjust. After all, you will see a base of \"Action RPG Platform\" game.</b><br><b><br></b><br><b>Development year: 2017</b><br><b>My role: only programmer</b><br><b>Language: C# (Unity)<br></b>",
+                "text": "In this prototype, you can create a new character by spreading points into character's characteristics that updates a web chart after each adjust. After all, you will see a base of \"Action RPG Platform\" game.<br><b><br></b><br><b>Development year: 2017</b><br><b>My role: only programmer</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://youtu.be/M4tjdBj3EBk\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Youtube</a>     ",
                 "overlayOpacity": "0.7"
               },
@@ -177,7 +177,7 @@
                 "title": "Special Area",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "<b>Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers. These games was meded using Unity with C#.</b>",
+                "text": "Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers. These games was meded using Unity with C#.",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=Nl2v-PpXebg\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">In The Hell</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=zfghzTe1FuQ\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Looking For</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=I2OkmhBG6h4&amp;t=83s\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Dragon Shooter</a>   ",
                 "overlayOpacity": "0.6"
               }
