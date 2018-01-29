@@ -87,7 +87,7 @@
                 "title": "Dragon's Breath",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "In this game you control a dragon that is attacking a medieval city, you need to fly up and down to avoid the spears being thrown at you and you can also score when you burn with your breathing both the soldiers and the spears. \n<br>\n<br>Release: 2018\n<br>My role: programmer (only me)<br>",
+                "text": "In this game you control a dragon that is attacking a medieval city, you need to fly up and down to avoid the spears being thrown at you and you can also score when you burn with your breathing both the soldiers and the spears. \n<br><br><b>Release: 2018\n<br>My role: programmer (only me)</b><br><b>Language: C# (Unity)</b>",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"#top\" data-toolbar=\"-mbrBtnMove\">COMMING SOON</a>     ",
                 "overlayOpacity": "0.5"
               },
@@ -102,7 +102,7 @@
                 "title": "V.R.I.D.O.S.",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "Created in a 31h game jam, this is a simple or cooperative game that two skeletons carrying a large glass by streets of underworld. Each skeleton must either push or be pushed to avoid obstacles, be careful to not drop or push too hard.<br><br><b>Release: 2017<br>My role: programmer</b>",
+                "text": "Created in a 31h game jam, this is a simple or cooperative game that two skeletons carrying a large glass by streets of underworld. Each skeleton must either push or be pushed to avoid obstacles, be careful to not drop or push too hard.<br><br><b>Release: 2017<br>My role: programmer</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://play.google.com/store/apps/details?id=com.Virtra.VRIDOS\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">FOR ANDROID</a> ",
                 "overlayOpacity": "0.6"
               },
@@ -117,7 +117,7 @@
                 "title": "Color Trick University",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "In this game you control a fresh one who finally ingress in the university, and in your first day the seniors students decided hazing the newbies. You are one of them, use your skateboard and jump over stones, increase or decrease your speed to avoid the ballons. To scores you need to get as many flags as you can.<br><b><br></b><b>Release: 2016</b><br><b>My role: lead programmer</b><br><b>Global Game Jam<br></b>",
+                "text": "In this game you control a fresh one who finally ingress in the university, and in your first day the seniors students decided hazing the newbies. You are one of them, use your skateboard and jump over stones, increase or decrease your speed to avoid the ballons. To scores you need to get as many flags as you can.<br><b><br></b><b>Release: 2016</b><br><b>My role: lead programmer</b><br><b>Global Game Jam</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?id=0B8kHv1s5I6E5MU02REhzWjlJdEU&amp;export=download\" data-toolbar=\"-mbrBtnMove\">FOR WINDOWS</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?id=0B8kHv1s5I6E5MU02REhzWjlJdEU&amp;export=download\" data-toolbar=\"-mbrBtnMove\">GGJ Game Page</a> ",
                 "overlayOpacity": "0.7"
               },
@@ -132,7 +132,7 @@
                 "title": "Plash!",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "In this game you are a magic rain drop that falls and runs down a gutter, you need to avoid obstacles by sliding to left or right, every obstacle triggers different effects, they can absorb you (rain pools), divide you in two droplets or increse your speed (oil), also you can growth and score by consuming others smaller rain drops.<br><br><b>Release: 2014</b><br><b>My role: programmer</b>",
+                "text": "In this game you are a magic rain drop that falls and runs down a gutter, you need to avoid obstacles by sliding to left or right, every obstacle triggers different effects, they can absorb you (rain pools), divide you in two droplets or increse your speed (oil), also you can growth and score by consuming others smaller rain drops.<br><br><b>Release: 2014</b><br><b>My role: programmer<br>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?authuser=0&amp;id=0B8kHv1s5I6E5UFlJVzVjOEc1b3c&amp;export=download\" data-toolbar=\"-mbrBtnMove\">FOR ANDROID</a> ",
                 "overlayOpacity": "0.7"
               },
@@ -147,7 +147,7 @@
                 "title": "SumoTech",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "This is a multiplayer competitive game where both players chooses the sumo fighters and go to arena facing each other with one goal, push the adversary out of the arena, be careful with back strikes, they are finishing blows. This game was created for a graduation competition event at the university.<br><br><b>Release: 2013<br>My role: programmer</b>",
+                "text": "This is a multiplayer competitive game where both players chooses the sumo fighters and go to arena facing each other with one goal, push the adversary out of the arena, be careful with back strikes, they are finishing blows. This game was created for a graduation competition event at the university.<br><br><b>Release: 2013<br>My role: programmer</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": "<a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://drive.google.com/uc?authuser=0&amp;id=0B8kHv1s5I6E5U3VVd3Q2d2p3MTA&amp;export=download\" data-toolbar=\"-mbrBtnMove\">FOR WINDOWS</a> ",
                 "overlayOpacity": "0.5"
               },
@@ -162,7 +162,7 @@
                 "title": "The Lost War (Prototype)",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "<b>In this prototype, you can create a new character by spreading points into character's characteristics that updates a web chart after each adjust. After all, you will see a base of \"Action RPG Platform\" game.</b><br><b><br></b><br><b>Development year: 2017</b><br><b>My role: only programmer</b>",
+                "text": "<b>In this prototype, you can create a new character by spreading points into character's characteristics that updates a web chart after each adjust. After all, you will see a base of \"Action RPG Platform\" game.</b><br><b><br></b><br><b>Development year: 2017</b><br><b>My role: only programmer</b><br><b>Language: C# (Unity)<br></b>",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://youtu.be/M4tjdBj3EBk\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Youtube</a>     ",
                 "overlayOpacity": "0.7"
               },
@@ -177,7 +177,7 @@
                 "title": "Special Area",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "<b>Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers.</b>",
+                "text": "<b>Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers. These games was meded using Unity with C#.</b>",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=Nl2v-PpXebg\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">In The Hell</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=zfghzTe1FuQ\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Looking For</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=I2OkmhBG6h4&amp;t=83s\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Dragon Shooter</a>   ",
                 "overlayOpacity": "0.6"
               }
@@ -194,6 +194,9 @@
               "color": "#3d8eb9",
               "text-align": "center",
               "font-size": "36px"
+            },
+            "P": {
+              "font-size": "20px"
             }
           }
         },
@@ -488,7 +491,7 @@
           "caption2": "<b>Game Programmer: </b>2 years on Fábrica de Software do UNIPÊ -<b>-&nbsp;</b>University Extension Program that simulates an company. (2013-2015).<br><b>Qualification Consultant: </b>Since 2015 in the CESAR. My primary function is to teach game development and guiding the high school students projects and the beginning of their professional lives.<br>",
           "title3": "Knowledges",
           "subtitle3": "",
-          "caption3": "<b>Language: </b>English (Intermediate), Spanish (Basic)<br><b>Programming Language: </b>C#, Java, PHP and SQL,.<br><b>Others:</b><br>- Unity Engine<br>-<b>&nbsp;</b>Object Oriented Paradigm<br>- Design Patterns<br>- Agile (specially Scrum)<br>- Basic: Version Controll Tools (Git and SVN)<br>- Basic: Game Design<br>- Basic: User Centered Design and Design Thinking<br><br>",
+          "caption3": "<b>Language: </b>English (Intermediate), Spanish (Basic)<br><b>Programming Language: </b>C# and the basics of Java and SQL.<br><b>Others:</b><br>- Unity Engine<br>-<b>&nbsp;</b>Object Oriented Paradigm<br>- Design Patterns<br>- Agile (specially Scrum)<br>- Basic: Version Controll Tools (Git and SVN)<br>- Basic: Game Design<br>- Basic: User Centered Design and Design Thinking<br><br>",
           "title4": "Others Experiences",
           "subtitle4": "",
           "caption4": "<b>Game Jams: </b>I Participated on some editions of Global Game Jam and others local game jams like ExpoTech Game Jam and Portomídia GameJam.<br><b>Dragon's Breath:</b>&nbsp;An \"infinity run\" game created to workshop, but it was cool, then we decided to work on (unfinished yet).",
