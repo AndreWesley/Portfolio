@@ -177,8 +177,8 @@
                 "title": "Special Area",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers. These games was meded using Unity with C#.",
-                "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=Nl2v-PpXebg\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">In The Hell</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=zfghzTe1FuQ\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Looking For</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=I2OkmhBG6h4&amp;t=83s\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Dragon Shooter</a>   ",
+                "text": "Here are not an area for my games, in my current job I teach game development and guide the high school students projects. So, here you can see some of their games trailers. These games was meded using Unity with C#.<br><br>-&nbsp;The \"In The Hell\" game trailer is currently technical issues. It will be ready soon.",
+                "buttons": "  <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=zfghzTe1FuQ\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Looking For</a> <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://www.youtube.com/watch?v=I2OkmhBG6h4&amp;t=83s\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">Dragon Shooter</a>   ",
                 "overlayOpacity": "0.6"
               }
             ]
@@ -213,8 +213,8 @@
             "showTitle": true,
             "showText": true,
             "showButton": false,
-            "paddingTop": "3",
-            "paddingBottom": "2",
+            "paddingTop": "2",
+            "paddingBottom": "1",
             "bgImageRadio": false,
             "bgImage": "@THEME_PATH@/components/_images/desert.jpg",
             "parallax": true,
