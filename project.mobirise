@@ -102,7 +102,7 @@
                 "title": "Dim",
                 "overlay": true,
                 "contentAlign": "center",
-                "text": "This game aims to raise awareness about \"Depression Desease\".<br>You control the depression desease itself, your objective is discourage the victim to do things like play a guitar or watch TV; when you are seen the victim starts to realize the own condition, then avoid the victim's sight and understand why this situation isn't cool.<br><br><b>Release: 2018\n<br>My role: lead programmer</b><br><b>Language: C# (Unity)</b>",
+                "text": "This game aims to raise awareness about \"Depression Desease\".<br>Created in a 32h game jam, you control the depression desease itself, your objective is discourage the victim to do things like play a guitar or watch TV; when you are seen the victim starts to realize the own condition, then avoid the victim's sight and understand why this situation isn't cool.<br><br><b>Release: 2018\n<br>My role: lead programmer</b><br><b>Language: C# (Unity)</b>",
                 "buttons": " <a data-app-btn=\"true\" class=\"btn btn-lg btn-primary\" href=\"https://play.google.com/store/apps/details?id=com.DaCaixaStudio.Dim\" data-toolbar=\"-mbrBtnMove\" target=\"_blank\">FOR ANDROID<br></a>     ",
                 "overlayOpacity": "0.5"
               },
