@@ -710,9 +710,10 @@
               "active": true,
               "src": "@PROJECT_PATH@/assets/images/download-227x128.png",
               "height": 128,
-              "alt": "Mobirise",
-              "link": "https://mobirise.com",
-              "title": ""
+              "alt": "Andre Oliveira",
+              "link": "#top",
+              "title": "",
+              "linkInNewWindow": false
             },
             "iconFont": {
               "class": "mbr-iconfont mbr-iconfont-menu",
