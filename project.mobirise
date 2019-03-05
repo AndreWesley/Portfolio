@@ -27,7 +27,7 @@
     "favicon": "",
     "noImageResize": "",
     "versionFirst": "3.11.1",
-    "uniqCompNum": 42,
+    "uniqCompNum": 43,
     "versionPublish": "4.5.4",
     "path": "@PROJECT_PATH@",
     "screenshot": "screenshot.png"
@@ -84,7 +84,7 @@
                 "showTitle": true,
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=M4tjdBj3EBk",
-                "title": "Dragon's Breath",
+                "title": "Dragon's Breath teste",
                 "overlay": true,
                 "contentAlign": "center",
                 "text": "In this game you control a dragon that is attacking a medieval city, you need to fly up and down to avoid the spears being thrown at you and you can also score when you burn with your breathing both the soldiers and the spears. \n<br><br><b>Release: 2018\n<br>My role: programmer (only me)</b><br><b>Language: C# (Unity)</b>",
