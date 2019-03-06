@@ -430,7 +430,7 @@
             "showButtons": false,
             "paddingTop": 3,
             "paddingBottom": 3,
-            "columns": "4",
+            "columns": "3",
             "bgImageRadio": false,
             "bgImage": "images/bg3.jpg",
             "parallax": true,
@@ -445,7 +445,7 @@
             "overlayOpacity": 0.5
           },
           "headerAlign": "left",
-          "header": "Special Area: students projects",
+          "header": "Special Area: some students projects",
           "subheader": "By John Smith posted July 30, 2015",
           "media1": {
             "image": {
