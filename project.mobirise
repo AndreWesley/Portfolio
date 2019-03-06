@@ -78,13 +78,13 @@
             "slides": [
               {
                 "image": "@PROJECT_PATH@/assets/images/dragonbreath-6-1920x1080.png",
-                "active": false,
+                "active": true,
                 "showButtons": true,
                 "showText": true,
                 "showTitle": true,
                 "playVideo": false,
                 "videoUrl": "https://www.youtube.com/watch?v=M4tjdBj3EBk",
-                "title": "Dragon's Breath teste",
+                "title": "Dragon's Breath",
                 "overlay": true,
                 "contentAlign": "center",
                 "text": "In this game you control a dragon that is attacking a medieval city, you need to fly up and down to avoid the spears being thrown at you and you can also score when you burn with your breathing both the soldiers and the spears. \n<br><br><b>Release: 2018\n<br>My role: programmer (only me)</b><br><b>Language: C# (Unity)</b>",
@@ -93,7 +93,7 @@
               },
               {
                 "image": "@PROJECT_PATH@/assets/images/unnamed-1687x949.png",
-                "active": true,
+                "active": false,
                 "showButtons": true,
                 "showText": true,
                 "showTitle": true,
@@ -689,7 +689,7 @@
           "_name": "ext.menu",
           "_anchor": "ext_menu-0",
           "_params": {
-            "logo": true,
+            "logo": false,
             "showBrand": true,
             "hideButtons": true,
             "sticky": true,
