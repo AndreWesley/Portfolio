@@ -15,17 +15,17 @@
   color: #28324e;
   font-size: 32px;
 }
-#content4-m P {
-  text-align: center;
-}
-#content4-m I {
-  font-size: 14px;
-}
 #msg-box2-r .mbr-header .mbr-header__text {
   color: #252525;
 }
 #msg-box2-r .mbr-article {
   color: #252525;
+}
+#content4-m P {
+  text-align: center;
+}
+#content4-m I {
+  font-size: 14px;
 }
 #form1-j .mbr-header__text {
   color: #28324e;

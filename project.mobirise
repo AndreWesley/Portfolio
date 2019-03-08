@@ -56,7 +56,7 @@
             "color": "#28324e",
             "hamburgerColor": "#ffffff"
           },
-          "items": "<li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#content4-m\">ABOUT</a></li><li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#features1-k\">PORTFOLIO</a></li><li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#features1-o\">CURRICULUM</a></li> <li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"#bottom\">CONTACT</a></li>",
+          "items": "<li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#features1-k\">PORTFOLIO</a></li><li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#features1-o\">CURRICULUM</a></li><li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"index.html#content4-m\">ABOUT</a></li> <li class=\"mbr-navbar__item\"><a data-app-btn=\"true\" class=\"mbr-buttons__link btn mbr-menu-item text-white\" data-app-selector=\".mbr-navbar__items a\" href=\"#bottom\">CONTACT</a></li>",
           "buttons": "<li class=\"mbr-navbar__item\"><a data-app-btn=\"parent\" class=\"mbr-buttons__btn btn btn-default\" data-app-selector=\".mbr-navbar__items a\" href=\"https://mobirise.com\">DOWNLOAD</a></li>",
           "logo": {
             "image": {
@@ -101,7 +101,7 @@
         },
         {
           "_params": {
-            "showHeader": false,
+            "showHeader": true,
             "showSubheader": false,
             "showImages": true,
             "showTitles": true,
@@ -467,7 +467,7 @@
             }
           },
           "title1": "Crystal Knight",
-          "caption1": "The player controls the guardian of a powerful magic crystal what use its power against the enemies to keep the crystal safe.\n<br>\n<br><b>My role: adviser</b>",
+          "caption1": "The player controls the guardian of a powerful magic crystal what use its power against the enemies to keep the crystal safe.<br><br><br><b>My role: adviser&nbsp;</b><br>",
           "button1": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\" data-toolbar=\"-mbrBtnMove\">YOUTUBE</a>",
           "media2": {
             "image": {
@@ -489,7 +489,7 @@
             }
           },
           "title2": "Looking For",
-          "caption2": "The player control a special detective what take a mission to \"looking for\" a missing child, in this mission he will pass throgh challenges and facing supernatural beings.\n<br>\n<br><b>My role: adviser</b><br>",
+          "caption2": "The player control a special detective what take a mission to \"looking for\" a missing child, in this mission he will pass throgh challenges and facing supernatural beings.<br><br><b>My role: adviser</b><br>",
           "button2": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media3": {
             "image": {
@@ -511,7 +511,7 @@
             }
           },
           "title3": "Dragon Shooter",
-          "caption3": "The player control a powerful dragon what flyies through the Solar System keeping the planets safes by fighting the evil dragons. \n<br>\n<br><b>My role: adviser</b><br>",
+          "caption3": "The player control a powerful dragon what flyies through the Solar System keeping the planets safes by fighting the evil dragons.<br><br><br><b>My role: adviser</b><br>",
           "button3": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media4": {
             "image": {
@@ -582,9 +582,212 @@
           "_anchor": "features1-s"
         },
         {
+          "_params": {
+            "showHeader": true,
+            "showSubheader": false,
+            "showImages": true,
+            "showTitles": true,
+            "showCaptions": true,
+            "showButtons": false,
+            "paddingTop": "2",
+            "paddingBottom": "4",
+            "columns": 4,
+            "bgImageRadio": false,
+            "bgImage": "images/bg3.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "headerAlign": "left",
+          "header": "CURRICULUM",
+          "subheader": "By John Smith posted July 30, 2015",
+          "media1": {
+            "image": {
+              "src": "images/bootstrap.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "linkInNewWindow": false,
+              "name": "home",
+              "family": "MobiriseIcons",
+              "link": "",
+              "size": "150",
+              "active": true
+            }
+          },
+          "title1": "EDUCATION",
+          "caption1": "<b>Graduated</b>:  Systems for Internet at UNIPÊ (Universitary Center of João Pessoa) - GPA = 3.85 (British Columbia parameters). Received Certificate of Merit.\n(2015)<br><br><b>Trainned</b>: Agile with Scrum - 20h (2016)\n<br><br><b>Specialization</b>: Game Design and Development - Coursera (2016)\n<br><br><b>Specialization</b>: Game Design, Arts and Concepts - Coursera (2018)<br>",
+          "button1": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "media2": {
+            "image": {
+              "src": "images/responsive.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "linkInNewWindow": false,
+              "name": "briefcase",
+              "family": "MobiriseIcons",
+              "link": "",
+              "size": "150",
+              "active": true
+            }
+          },
+          "title2": "EXPERIENCE",
+          "caption2": "<b>Game Developer: </b>Since jan/2019 I am working at PushStart using JavaScript programming language and a SDK based on PixiJS.<br><br><b>Game Programmer</b>: 2 years at Fábrica de Software do UNIPÊ -- University Extension Program that simulates an company. (2013-2015).\n<br><br><b>Qualification Consultant</b>: 3 and a half years at CESAR School teaching game development for high school students.<br>(2015-2018).<br>",
+          "button2": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "media3": {
+            "image": {
+              "src": "images/google-fonts.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "linkInNewWindow": false,
+              "name": "edit2",
+              "family": "MobiriseIcons",
+              "link": "",
+              "size": "150",
+              "active": true
+            }
+          },
+          "title3": "KNOWLEDGES",
+          "caption3": "<b>Language</b>: English (Intermediate), Spanish (Basic)\n<br><br><b>Programming Language</b>: C# and the basics of JavaScript, Java and SQL.\n<br><br><b>Others:\n</b><br>- Unity Engine\n<br>- Object Oriented Paradigm\n<br>- Design Patterns\n<br>- Agile (specially Scrum)\n<br>- Basic: Version Controll Tools (Git and SVN)\n<br>- Basic: Game Design\n<br>- Basic: User Centered Design <br>- Basic: Design Thinking",
+          "button3": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "media4": {
+            "image": {
+              "src": "images/unlimited-websites.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "linkInNewWindow": false,
+              "name": "globe-2",
+              "family": "MobiriseIcons",
+              "link": "",
+              "size": "150",
+              "active": true
+            }
+          },
+          "title4": "OTHER EXPERIENCES",
+          "caption4": "<b>Game Jams</b>: I Participated on some editions of Global Game Jam and others local game jams like ExpoTech Game Jam and Portomídia GameJam.\n<br><br><b>Dragon's Breath</b>: An \"infinity run\" game created to workshop, but it was cool, then we decided to work on (unfinished yet).<br>",
+          "button4": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "media5": {
+            "image": {
+              "active": true,
+              "src": "images/blocks.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "link": "",
+              "size": 0
+            }
+          },
+          "title5": "TRENDY WEBSITE BLOCKS",
+          "caption5": "Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.",
+          "button5": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "media6": {
+            "image": {
+              "active": true,
+              "src": "images/host.png",
+              "class": "mbr-figure__img",
+              "width": 600
+            },
+            "video": {
+              "class": "mbr-figure__img",
+              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
+            },
+            "iconFont": {
+              "class": "mbr-iconfont mbr-iconfont-features1",
+              "link": "",
+              "size": 0
+            }
+          },
+          "title6": "HOST ANYWHERE",
+          "caption6": "Publish your website to a local drive, FTP or host on Amazon S3, Google Drive, Github. Don't limit yourself to just one platform or service provider.",
+          "button6": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
+          "_tags": [
+            "Layout"
+          ],
+          "_name": "features1",
+          "_anchor": "features1-o"
+        },
+        {
+          "_inherit": "msg-box1",
+          "_styles": {
+            ".mbr-header .mbr-header__text": {
+              "color": "#252525"
+            },
+            ".mbr-article": {
+              "color": "#252525"
+            }
+          },
+          "_params": {
+            "showTitle": false,
+            "showText": false,
+            "showButtons": false,
+            "paddingTop": 2,
+            "paddingBottom": 3,
+            "bgImageRadio": false,
+            "bgImage": "images/bg3.jpg",
+            "parallax": true,
+            "bgColorRadio": true,
+            "bgColor": "#fff",
+            "bgVideoRadio": false,
+            "bgVideo": {
+              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
+            },
+            "overlay": false,
+            "overlayColor": "#222",
+            "overlayOpacity": 0.5
+          },
+          "title": "ONE OF THE EASIEST WEBSITE BUILDERS TODAY.",
+          "text": "",
+          "button": "<a data-app-btn=\"true\" class=\"mbr-buttons__btn btn btn-lg btn-default\" href=\"https://mobirise.com\">TRY FOR FREE</a>",
+          "_tags": [
+            "Layout"
+          ],
+          "_name": "msg-box2",
+          "_anchor": "msg-box2-r"
+        },
+        {
           "_inherit": "features1",
           "_params": {
-            "showHeader": false,
+            "showHeader": true,
             "showSubheader": false,
             "showImages": true,
             "showTitles": true,
@@ -610,7 +813,7 @@
             "Layout"
           ],
           "headerAlign": "left",
-          "header": "",
+          "header": "ABOUT",
           "subheader": "By John Smith posted July 30, 2015",
           "media1": {
             "image": {
@@ -751,209 +954,6 @@
               "font-size": "14px"
             }
           }
-        },
-        {
-          "_inherit": "msg-box1",
-          "_styles": {
-            ".mbr-header .mbr-header__text": {
-              "color": "#252525"
-            },
-            ".mbr-article": {
-              "color": "#252525"
-            }
-          },
-          "_params": {
-            "showTitle": false,
-            "showText": false,
-            "showButtons": false,
-            "paddingTop": 2,
-            "paddingBottom": 3,
-            "bgImageRadio": false,
-            "bgImage": "images/bg3.jpg",
-            "parallax": true,
-            "bgColorRadio": true,
-            "bgColor": "#fff",
-            "bgVideoRadio": false,
-            "bgVideo": {
-              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
-            },
-            "overlay": false,
-            "overlayColor": "#222",
-            "overlayOpacity": 0.5
-          },
-          "title": "ONE OF THE EASIEST WEBSITE BUILDERS TODAY.",
-          "text": "",
-          "button": "<a data-app-btn=\"true\" class=\"mbr-buttons__btn btn btn-lg btn-default\" href=\"https://mobirise.com\">TRY FOR FREE</a>",
-          "_tags": [
-            "Layout"
-          ],
-          "_name": "msg-box2",
-          "_anchor": "msg-box2-r"
-        },
-        {
-          "_params": {
-            "showHeader": false,
-            "showSubheader": false,
-            "showImages": true,
-            "showTitles": true,
-            "showCaptions": true,
-            "showButtons": false,
-            "paddingTop": "2",
-            "paddingBottom": "4",
-            "columns": 4,
-            "bgImageRadio": false,
-            "bgImage": "images/bg3.jpg",
-            "parallax": true,
-            "bgColorRadio": true,
-            "bgColor": "#fff",
-            "bgVideoRadio": false,
-            "bgVideo": {
-              "url": "http://www.youtube.com/watch?v=uNCr7NdOJgw"
-            },
-            "overlay": false,
-            "overlayColor": "#222",
-            "overlayOpacity": 0.5
-          },
-          "headerAlign": "left",
-          "header": "DROP-DEAD EASY WEBSITE MAKER",
-          "subheader": "By John Smith posted July 30, 2015",
-          "media1": {
-            "image": {
-              "src": "images/bootstrap.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "linkInNewWindow": false,
-              "name": "home",
-              "family": "MobiriseIcons",
-              "link": "",
-              "size": "150",
-              "active": true
-            }
-          },
-          "title1": "EDUCATION",
-          "caption1": "<b>Graduated</b>:  Systems for Internet at UNIPÊ (Universitary Center of João Pessoa) - GPA = 3.85 (British Columbia parameters). Received Certificate of Merit.\n(2015)<br><br><b>Trainned</b>: Agile with Scrum - 20h (2016)\n<br><br><b>Specialization</b>: Game Design and Development - Coursera (2016)\n<br><br><b>Specialization</b>: Game Design, Arts and Concepts - Coursera (2018)<br>",
-          "button1": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "media2": {
-            "image": {
-              "src": "images/responsive.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "linkInNewWindow": false,
-              "name": "briefcase",
-              "family": "MobiriseIcons",
-              "link": "",
-              "size": "150",
-              "active": true
-            }
-          },
-          "title2": "EXPERIENCE",
-          "caption2": "<b>Game Developer: </b>Since jan/2019 I am working at PushStart using JavaScript programming language and a SDK based on PixiJS.<br><br><b>Game Programmer</b>: 2 years at Fábrica de Software do UNIPÊ -- University Extension Program that simulates an company. (2013-2015).\n<br><br><b>Qualification Consultant</b>: 3 and a half years at CESAR School teaching game development for high school students.<br>(2015-2018).<br>",
-          "button2": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "media3": {
-            "image": {
-              "src": "images/google-fonts.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "linkInNewWindow": false,
-              "name": "edit2",
-              "family": "MobiriseIcons",
-              "link": "",
-              "size": "150",
-              "active": true
-            }
-          },
-          "title3": "KNOWLEDGES",
-          "caption3": "<b>Language</b>: English (Intermediate), Spanish (Basic)\n<br><br><b>Programming Language</b>: C# and the basics of JavaScript, Java and SQL.\n<br><br><b>Others:\n</b><br>- Unity Engine\n<br>- Object Oriented Paradigm\n<br>- Design Patterns\n<br>- Agile (specially Scrum)\n<br>- Basic: Version Controll Tools (Git and SVN)\n<br>- Basic: Game Design\n<br>- Basic: User Centered Design <br>- Basic: Design Thinking",
-          "button3": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "media4": {
-            "image": {
-              "src": "images/unlimited-websites.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "linkInNewWindow": false,
-              "name": "globe-2",
-              "family": "MobiriseIcons",
-              "link": "",
-              "size": "150",
-              "active": true
-            }
-          },
-          "title4": "OTHER EXPERIENCES",
-          "caption4": "<b>Game Jams</b>: I Participated on some editions of Global Game Jam and others local game jams like ExpoTech Game Jam and Portomídia GameJam.\n<br><br><b>Dragon's Breath</b>: An \"infinity run\" game created to workshop, but it was cool, then we decided to work on (unfinished yet).<br>",
-          "button4": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "media5": {
-            "image": {
-              "active": true,
-              "src": "images/blocks.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "link": "",
-              "size": 0
-            }
-          },
-          "title5": "TRENDY WEBSITE BLOCKS",
-          "caption5": "Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.",
-          "button5": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "media6": {
-            "image": {
-              "active": true,
-              "src": "images/host.png",
-              "class": "mbr-figure__img",
-              "width": 600
-            },
-            "video": {
-              "class": "mbr-figure__img",
-              "src": "http://www.youtube.com/embed/sOSTC6FM6Bw"
-            },
-            "iconFont": {
-              "class": "mbr-iconfont mbr-iconfont-features1",
-              "link": "",
-              "size": 0
-            }
-          },
-          "title6": "HOST ANYWHERE",
-          "caption6": "Publish your website to a local drive, FTP or host on Amazon S3, Google Drive, Github. Don't limit yourself to just one platform or service provider.",
-          "button6": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
-          "_tags": [
-            "Layout"
-          ],
-          "_name": "features1",
-          "_anchor": "features1-o"
         },
         {
           "_params": {
