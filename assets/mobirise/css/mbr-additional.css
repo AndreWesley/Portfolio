@@ -15,6 +15,21 @@
   color: #28324e;
   font-size: 32px;
 }
+#features1-k .mbr-section-title .mbr-header__text {
+  color: #28324e;
+}
+#features1-k .mbr-section__col .mbr-header__text {
+  color: #28324e;
+}
+#features1-p .mbr-section__col .mbr-header__text {
+  color: #28324e;
+}
+#features1-s .mbr-section__col .mbr-header__text {
+  color: #28324e;
+}
+#features1-s .mbr-section-title .mbr-header__text {
+  color: #28324e;
+}
 #msg-box2-r .mbr-header .mbr-header__text {
   color: #252525;
 }
@@ -27,6 +42,12 @@
 #content4-m I {
   font-size: 14px;
 }
+#content4-m .mbr-section-title .mbr-header__text {
+  color: #28324e;
+}
+#content4-m .mbr-section__col .mbr-header__text {
+  color: #28324e;
+}
 #form1-j .mbr-header__text {
   color: #28324e;
 }
@@ -38,4 +59,6 @@
 }
 #social-buttons2-c .mbr-header__text {
   color: #ffffff;
+  font-size: 20px;
+  text-align: right;
 }
