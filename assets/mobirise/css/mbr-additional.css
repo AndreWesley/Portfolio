@@ -30,6 +30,9 @@
 #features1-s .mbr-section-title .mbr-header__text {
   color: #28324e;
 }
+#features1-o P {
+  text-align: left;
+}
 #msg-box2-r .mbr-header .mbr-header__text {
   color: #252525;
 }

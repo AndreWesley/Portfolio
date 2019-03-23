@@ -722,7 +722,7 @@
             }
           },
           "title4": "OTHER EXPERIENCES",
-          "caption4": "<b>Game Jams</b>: I Participated in Global Game Jam and others local game jams like \"ExpoTech Game Jam\" and \"Portomídia GameJam\".&nbsp;<br><br><b>Dragon's Breath</b>: An \"infinity run\" game created to workshop, but it was cool, then we decided to work on.<br>",
+          "caption4": "<b>Game Jams</b>: I join a jam siteParticipated in Global Game Jam and others local game jams like \"ExpoTech Game Jam\" and \"Portomídia GameJam\".&nbsp;<br><br><b>Dragon's Breath</b>: An \"infinity run\" game created to workshop, but it was cool, then we decided to work on.<br>",
           "button4": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media5": {
             "image": {
@@ -745,7 +745,7 @@
             }
           },
           "title5": "WORKSHOPS",
-          "caption5": "<p><b>Agile Thinking (2018)</b></p><p><b>-&nbsp;</b>Days: 03</p><p><b>-&nbsp;</b>150 min/day</p><p><b>Games for Change the World (2018)</b></p><p><b>-</b> Days: 03</p><p><b>-</b> 150 min/day</p><p><b>RPG and Transmedia (2018)</b></p><p><b>-</b> Days: 03</p><p><b>-</b> 150 min/day</p><p><b>Code of Thrones: Starting with Unity (2016)</b></p><p><b>- </b>Days: 03</p><p><b>-</b> 120 min/day</p>",
+          "caption5": "<b>Agile Thinking</b><br>When: 2018<br>Days: 04<br>Duration: 150min/day<br><br><b>Games for Change the World</b><br>When: 2018<br>Days: 04<br>Duration: 150 min/day<br><br><b>RPG and Transmedia<br></b>When: 2018<br>Days: 03<br>Duration: 150 min/day<br><br><b>Code of Thrones: Starting with Unity</b>\n<br>When: 2016\n<br>Days: 03\n<br>Duration: 150 min/day",
           "button5": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media6": {
             "image": {
@@ -771,7 +771,12 @@
             "Layout"
           ],
           "_name": "features1",
-          "_anchor": "features1-o"
+          "_anchor": "features1-o",
+          "_styles": {
+            "P": {
+              "text-align": "left"
+            }
+          }
         },
         {
           "_inherit": "msg-box1",
