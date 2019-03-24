@@ -17,7 +17,7 @@
     "uniqCompNum": 37,
     "versionPublish": "4.9.5",
     "screenshot": "screenshot.png",
-    "favicon": "",
+    "favicon": "@PROJECT_PATH@/assets/images/favicon-128x96.png",
     "noImageResize": ""
   },
   "pages": {
@@ -483,7 +483,7 @@
             }
           },
           "title1": "Crystal Knight",
-          "caption1": "The player controls the guardian of a powerful magic crystal what use its power against the enemies to keep the crystal safe.<br><br><br><b>My role: adviser&nbsp;</b><br>",
+          "caption1": "The player controls the guardian of a powerful magic crystal what use its power against the enemies to keep the crystal safe.<br><br><br><b>My role: advisor&nbsp;</b><br>",
           "button1": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\" data-toolbar=\"-mbrBtnMove\">YOUTUBE</a>",
           "media2": {
             "image": {
@@ -505,7 +505,7 @@
             }
           },
           "title2": "Looking For",
-          "caption2": "The player control a special detective what take a mission to \"looking for\" a missing child, in this mission he will pass throgh challenges and facing supernatural beings.<br><br><b>My role: adviser</b><br>",
+          "caption2": "The player control a special detective what take a mission to \"looking for\" a missing child, in this mission he will pass throgh challenges and facing supernatural beings.<br><br><b>My role: advisor&nbsp;</b><br>",
           "button2": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media3": {
             "image": {
@@ -527,7 +527,7 @@
             }
           },
           "title3": "Dragon Shooter",
-          "caption3": "The player control a powerful dragon what flyies through the Solar System keeping the planets safes by fighting the evil dragons.<br><br><br><b>My role: adviser</b><br>",
+          "caption3": "The player control a powerful dragon what flyies through the Solar System keeping the planets safes by fighting the evil dragons.<br><br><br><b>My role: advisor</b><br>",
           "button3": "<a data-app-btn=\"true\" href=\"https://mobirise.com\" class=\"mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default\">LEARN MORE</a>",
           "media4": {
             "image": {
