@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Portfolio",
-    "currentPage": "page3.html",
+    "currentPage": "about.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -707,7 +707,7 @@
         }
       ]
     },
-    "page3.html": {
+    "about.html": {
       "settings": {
         "title": "About",
         "meta_descr": "",
@@ -1232,7 +1232,7 @@
         }
       ]
     },
-    "page2.html": {
+    "curriculum.html": {
       "settings": {
         "title": "Curriculum",
         "meta_descr": "",
@@ -2101,7 +2101,7 @@
         }
       ]
     },
-    "page4.html": {
+    "portfolio.html": {
       "settings": {
         "title": "Portfolio",
         "meta_descr": "",
@@ -3265,7 +3265,7 @@
         }
       ]
     },
-    "page5.html": {
+    "contact.html": {
       "settings": {
         "title": "Contact",
         "meta_descr": "",
