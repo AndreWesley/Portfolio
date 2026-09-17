@@ -348,35 +348,13 @@
   .project-card:hover .project-thumb{ transform:scale(1.03); }
   .project-body{ padding:22px 26px 26px; display:flex; flex-direction:column; gap:14px; flex-grow:1; }
 
-  /* Each project gets an abstract, hand-picked pattern instead of a stock photo —
-     a nod to what the project actually is (ledger rows, a beacon's rings, kiln
-     firing-bands, tidal curves) rather than a generic screenshot placeholder. */
   .project-thumb{
     aspect-ratio:16/9; position:relative; overflow:hidden; flex-shrink:0;
     background:linear-gradient(135deg, var(--brand-a), var(--brand-b));
     transition:transform .35s ease;
   }
-  .project-thumb::before{
-    content:""; position:absolute; inset:0; mix-blend-mode:overlay; opacity:.6;
-  }
-  .thumb-ledger::before{
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,.95) 0 1px, transparent 1px 17px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,.95) 0 1px, transparent 1px 58px);
-  }
-  .thumb-beacon::before{
-    background-image: repeating-radial-gradient(circle at 28% 32%, transparent 0 10px, rgba(255,255,255,.9) 11px 13px, transparent 14px 30px);
-  }
-  .thumb-kiln::before{
-    background-image: repeating-linear-gradient(118deg, rgba(255,255,255,.95) 0 3px, transparent 3px 24px);
-  }
-  .thumb-tidal::before{
-    background-image: repeating-radial-gradient(ellipse 220px 90px at 50% 128%, rgba(255,255,255,.9) 0 2px, transparent 2px 16px);
-  }
-  .thumb-mark{
-    position:absolute; bottom:10px; left:14px; font-family:"Sora"; font-weight:700;
-    font-size:1.7rem; letter-spacing:-.02em; color:rgba(255,255,255,.94);
-    text-shadow:0 2px 12px rgba(0,0,0,.25);
+  .project-thumb img{
+    width:100%; height:100%; object-fit:cover; display:block;
   }
   .project-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
   .project-title{ font-family:"Sora"; font-weight:600; font-size:1.1rem; }
@@ -878,22 +856,22 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
-    thumb:"beacon", mark:"◎", tags:["Unity","C#","AR Foundation"], links:{ repo:"https://galaxystore.samsung.com/detail/com.Sidia.DigikinPocketAdventures", live:"#" },
+    img:"assets/images/digikin-logo-491x276.png", tags:["Unity","C#","AR Foundation"], links:{ repo:"https://galaxystore.samsung.com/detail/com.Sidia.DigikinPocketAdventures", live:"#" },
     en:{ title:"Digikin Pocket Adventures", description:"An AR hide-and-seek game where kids move through real-world themed environments racing the clock to find digital Digikins. Shipped for Samsung on the Galaxy Store." },
     pt:{ title:"Digikin Pocket Adventures", description:"Jogo AR de esconde-esconde onde crianças se movem por ambientes temáticos reais correndo contra o tempo pra encontrar Digikins digitais. Lançado para a Samsung na Galaxy Store." }
   },
   {
-    thumb:"tidal", mark:"◉", tags:["Unity","C#","XR"], links:{ repo:"https://play.google.com/store/apps/details?id=com.sidia.ctroom&hl=pt_BR", live:"#" },
+    img:"assets/images/ctroom-412x230.png", tags:["Unity","C#","XR"], links:{ repo:"https://play.google.com/store/apps/details?id=com.sidia.ctroom&hl=pt_BR", live:"#" },
     en:{ title:"Creators Room", description:"An XR app for digital creators to customize avatars and record expressive 3D videos — built for YouTubers, TikTokers and content creators making professional-quality XR content." },
     pt:{ title:"Creators Room", description:"App XR pra criadores digitais customizarem avatares e gravarem vídeos 3D expressivos — feito para YouTubers, TikTokers e criadores de conteúdo produzirem conteúdo XR de qualidade profissional." }
   },
   {
-    thumb:"kiln", mark:"◢", tags:["Unity","C#","FPS"], links:{ repo:"https://drive.google.com/file/d/1dTwwLx6PJ-lHpNewYc2XbwkjyI_mLr84/view?usp=sharing", live:"#" },
+    img:"assets/images/void-wiz-491x274.png", tags:["Unity","C#","FPS"], links:{ repo:"https://drive.google.com/file/d/1dTwwLx6PJ-lHpNewYc2XbwkjyI_mLr84/view?usp=sharing", live:"#" },
     en:{ title:"Void Wizard", description:"A boomer shooter inspired by classic FPS games like Quake 3 — explore the arena, wield a melee weapon and ranged gear to defeat waves of enemies." },
     pt:{ title:"Void Wizard", description:"Um boomer shooter inspirado em FPS clássicos como Quake 3 — explore a arena, use uma arma corpo a corpo e armas à distância pra derrotar ondas de inimigos." }
   },
   {
-    thumb:"ledger", mark:"▲", tags:["Unity","C#","Solo dev"], links:{ repo:"https://drive.google.com/file/d/1YyMMuA26PINvXAfyoZ2CaBC1sZ5yyQ7Z/view?usp=sharing", live:"#" },
+    img:"assets/images/dragonsbreath-1-600x337.png", tags:["Unity","C#","Solo dev"], links:{ repo:"https://drive.google.com/file/d/1YyMMuA26PINvXAfyoZ2CaBC1sZ5yyQ7Z/view?usp=sharing", live:"#" },
     en:{ title:"Dragon's Breath", description:"Control a dragon soaring above a medieval city — dodge incoming spears and blast fire breath to destroy the enemies. Solo-developed for Android." },
     pt:{ title:"Dragon's Breath", description:"Controle um dragão voando sobre uma cidade medieval — desvie de lanças e solte fogo pra destruir os inimigos. Desenvolvido sozinho para Android." }
   }
@@ -983,7 +961,7 @@ function renderProjects(lang){
   el.innerHTML = PROJECTS.map(p => {
     const c = p[lang];
     return `<div class="project-card">
-      <div class="project-thumb thumb-${p.thumb}" aria-hidden="true"><span class="thumb-mark">${p.mark}</span></div>
+      <div class="project-thumb"><img src="${p.img}" alt="${c.title}" loading="lazy"></div>
       <div class="project-body">
         <div class="project-top">
           <div class="project-title">${c.title}</div>
