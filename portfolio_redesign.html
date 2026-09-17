@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>André Oliveira — Senior Unity Developer</title>
+<meta name="description" content="Portfolio for André Oliveira, Senior Unity Developer: experience timeline, shipped games, skills, recommendations, awards and contact. EN/PT and light/dark toggles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS — dark is the default identity, light is the alt.
+     Bare :root = dark. Explicit [data-theme] always wins over
+     prefers-color-scheme. Edit these six colors to reskin.
+     ============================================================ */
+  :root{
+    --bg: #050505;
+    --surface-1: rgba(255,255,255,.05);
+    --surface-2: rgba(255,255,255,.08);
+    --surface-elevated: rgba(255,255,255,.11);
+    --border: rgba(255,255,255,.11);
+    --border-strong: rgba(255,255,255,.18);
+    --fg: #f3f2f5;
+    --fg-muted: rgba(243,242,245,.64);
+    --fg-subtle: rgba(243,242,245,.40);
+    --brand-a: #9a5cf5;   /* violet  */
+    --brand-b: #e23fa8;   /* magenta */
+    --brand-solid: #a970ff;
+    --glow-1: rgba(154,92,245,.30);
+    --glow-2: rgba(226,63,168,.14);
+    --success: #4ade80;
+    --danger: #f87171;
+    --shadow: rgba(0,0,0,.45);
+  }
+
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg: #fbfaf9;
+      --surface-1: rgba(20,10,30,.035);
+      --surface-2: rgba(20,10,30,.055);
+      --surface-elevated: rgba(20,10,30,.075);
+      --border: rgba(20,10,30,.09);
+      --border-strong: rgba(20,10,30,.16);
+      --fg: #18151c;
+      --fg-muted: rgba(24,21,28,.62);
+      --fg-subtle: rgba(24,21,28,.42);
+      --brand-a: #7c34e0;
+      --brand-b: #c22a95;
+      --brand-solid: #7c34e0;
+      --glow-1: rgba(124,52,224,.14);
+      --glow-2: rgba(194,42,149,.09);
+      --success: #16a34a;
+      --danger: #dc2626;
+      --shadow: rgba(20,10,30,.10);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg: #fbfaf9;
+    --surface-1: rgba(20,10,30,.035);
+    --surface-2: rgba(20,10,30,.055);
+    --surface-elevated: rgba(20,10,30,.075);
+    --border: rgba(20,10,30,.09);
+    --border-strong: rgba(20,10,30,.16);
+    --fg: #18151c;
+    --fg-muted: rgba(24,21,28,.62);
+    --fg-subtle: rgba(24,21,28,.42);
+    --brand-a: #7c34e0;
+    --brand-b: #c22a95;
+    --brand-solid: #7c34e0;
+    --glow-1: rgba(124,52,224,.14);
+    --glow-2: rgba(194,42,149,.09);
+    --success: #16a34a;
+    --danger: #dc2626;
+    --shadow: rgba(20,10,30,.10);
+  }
+  :root[data-theme="dark"]{
+    --bg: #050505;
+    --surface-1: rgba(255,255,255,.05);
+    --surface-2: rgba(255,255,255,.08);
+    --surface-elevated: rgba(255,255,255,.11);
+    --border: rgba(255,255,255,.11);
+    --border-strong: rgba(255,255,255,.18);
+    --fg: #f3f2f5;
+    --fg-muted: rgba(243,242,245,.64);
+    --fg-subtle: rgba(243,242,245,.40);
+    --brand-a: #9a5cf5;
+    --brand-b: #e23fa8;
+    --brand-solid: #a970ff;
+    --glow-1: rgba(154,92,245,.30);
+    --glow-2: rgba(226,63,168,.14);
+    --success: #4ade80;
+    --danger: #f87171;
+    --shadow: rgba(0,0,0,.45);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    transition:background .3s ease, color .3s ease;
+  }
+
+  h1,h2,h3{
+    font-family:"Sora", ui-sans-serif, system-ui, sans-serif;
+    margin:0;
+    text-wrap:balance;
+    letter-spacing:-0.02em;
+  }
+
+  a{ color:inherit; }
+  button{ font-family:inherit; }
+
+  ::selection{ background:var(--brand-solid); color:#fff; }
+
+  /* ---------- ambient glow field ---------- */
+  .glow-field{
+    position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  }
+  .glow-field::before,
+  .glow-field::after{
+    content:""; position:absolute; border-radius:50%;
+    filter:blur(90px);
+  }
+  .glow-field::before{
+    width:640px; height:640px; top:-220px; left:-160px;
+    background:radial-gradient(circle, var(--glow-1), transparent 70%);
+  }
+  .glow-field::after{
+    width:720px; height:720px; bottom:-260px; right:-200px;
+    background:radial-gradient(circle, var(--glow-2), transparent 70%);
+  }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.6875rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--fg-subtle);
+  }
+  .eyebrow::before{
+    content:""; width:6px; height:6px; border-radius:50%;
+    background:linear-gradient(135deg,var(--brand-a),var(--brand-b));
+  }
+
+  .gradient-text{
+    background:linear-gradient(120deg, var(--brand-a), var(--brand-b));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:color-mix(in srgb, var(--bg) 72%, transparent);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:0 24px;
+    height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand-mark{
+    font-family:"Sora"; font-weight:700; font-size:1.05rem; letter-spacing:-.01em;
+    display:flex; align-items:center; gap:10px; text-decoration:none;
+  }
+  .brand-dot{
+    width:10px; height:10px; border-radius:3px;
+    background:linear-gradient(135deg,var(--brand-a),var(--brand-b));
+    flex-shrink:0;
+  }
+  .nav-links{ display:flex; align-items:center; gap:28px; list-style:none; margin:0; padding:0; }
+  .nav-links a{
+    font-size:.875rem; font-weight:500; color:var(--fg-muted); text-decoration:none;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--fg); }
+  .nav-controls{ display:flex; align-items:center; gap:8px; }
+  .icon-btn{
+    width:36px; height:36px; border-radius:9px;
+    border:1px solid var(--border); background:var(--surface-1);
+    color:var(--fg-muted); cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .icon-btn:hover{ background:var(--surface-2); color:var(--fg); border-color:var(--border-strong); }
+  .icon-btn:active{ transform:scale(.94); }
+  .icon-btn svg{ width:17px; height:17px; }
+  .lang-btn{
+    width:auto; padding:0 12px; font-size:.75rem; font-weight:700; letter-spacing:.03em;
+    gap:5px;
+  }
+  .lang-btn .divider{ opacity:.3; }
+  .lang-btn .off{ opacity:.4; font-weight:600; }
+  :focus-visible{ outline:2px solid var(--brand-solid); outline-offset:2px; }
+
+  .menu-btn{ display:none; }
+  .mobile-menu{
+    display:none; position:fixed; top:64px; left:0; right:0; z-index:49;
+    background:color-mix(in srgb, var(--bg) 97%, transparent);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--border);
+    flex-direction:column; padding:8px 24px 20px;
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{
+    padding:13px 0; font-size:.95rem; font-weight:500; color:var(--fg-muted);
+    text-decoration:none; border-bottom:1px solid var(--border);
+  }
+  .mobile-menu a:last-child{ border-bottom:none; }
+  .mobile-menu a:hover, .mobile-menu a:focus-visible{ color:var(--fg); }
+
+  @media (max-width:820px){
+    .nav-links{ display:none; }
+    .menu-btn{ display:flex; }
+  }
+
+  /* ---------- section scaffolding ---------- */
+  section{ position:relative; padding:96px 0; scroll-margin-top:80px; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); margin-top:14px; }
+  .section-head p{ color:var(--fg-muted); margin-top:14px; font-size:1rem; }
+  .section-divider{ border:none; border-top:1px solid var(--border); margin:0; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:168px 0 96px; }
+  .hero-inner{ max-width:760px; }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.1rem); font-weight:700; margin-top:18px; line-height:1.05;
+  }
+  .hero .tagline{
+    margin-top:22px; font-size:1.15rem; color:var(--fg-muted); max-width:560px;
+  }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:10px; font-size:.9rem; font-weight:600;
+    text-decoration:none; cursor:pointer; border:1px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{
+    background:linear-gradient(120deg,var(--brand-a),var(--brand-b)); color:#fff;
+    box-shadow:0 10px 30px -12px var(--glow-1);
+  }
+  .btn-primary:hover{ box-shadow:0 14px 34px -10px var(--glow-1); transform:translateY(-1px); }
+  .btn-ghost{ background:var(--surface-1); border-color:var(--border); color:var(--fg); }
+  .btn-ghost:hover{ background:var(--surface-2); border-color:var(--border-strong); }
+
+  .hero-metrics{
+    display:grid; grid-template-columns:repeat(3,auto); gap:40px;
+    margin-top:64px; padding-top:32px; border-top:1px solid var(--border);
+  }
+  .metric-value{
+    font-family:"Sora"; font-weight:700; font-size:1.7rem; letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .metric-label{ font-size:.8rem; color:var(--fg-subtle); margin-top:4px; }
+  @media (max-width:600px){ .hero-metrics{ grid-template-columns:1fr 1fr; gap:24px 32px; } }
+
+  /* ---------- about ---------- */
+  #about .wrap{ max-width:760px; } /* tracks the hero's narrower measure above it */
+  .about-grid{
+    display:flex; flex-direction:column; gap:28px; align-items:start;
+  }
+  /* Wide screens only: float the avatar into the left gutter instead of
+     stacking it, without shifting the text column's own left edge. Needs
+     roughly 150px of clear space to the left of the 760px text column,
+     which only exists once the viewport is comfortably wider than that —
+     hence the tall min-width. Narrower viewports keep the safe stacked
+     layout above so the avatar never clips off-screen. */
+  @media (min-width:1100px){
+    .about-grid{ position:relative; display:block; }
+    .avatar{ position:absolute; top:0; right:calc(100% + 48px); }
+  }
+  /* Between 760px (where #about's own narrower 760px measure stops
+     self-centering) and 1100px (where the rule above takes over), that
+     self-centering gives the avatar extra left inset the plain 1120px
+     sections below it (Experience, Projects…) don't have. JS measures
+     the exact gap and cancels it — see alignAvatar() — since a vw-based
+     calc() drifts by half the scrollbar's width and it isn't worth
+     chasing that precisely in CSS alone. */
+  .avatar{
+    width:120px; height:120px; border-radius:16px; flex-shrink:0;
+    background:linear-gradient(135deg,var(--brand-a),var(--brand-b));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 20px 40px -18px var(--glow-1);
+    overflow:hidden;
+  }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-text p{ color:var(--fg-muted); margin:0 0 16px; max-width:62ch; }
+  .about-text p:last-child{ margin-bottom:0; }
+  @media (max-width:640px){ .avatar{ width:88px; height:88px; } }
+
+  /* ---------- experience timeline ---------- */
+  .timeline{ position:relative; padding-left:28px; }
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(180deg, var(--brand-a), var(--border) 85%);
+  }
+  .timeline-item{ position:relative; padding-bottom:44px; }
+  .timeline-item:last-child{ padding-bottom:0; }
+  .timeline-dot{
+    position:absolute; left:-28px; top:5px; width:12px; height:12px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--brand-solid);
+  }
+  .timeline-item.current .timeline-dot{
+    background:var(--brand-solid);
+    box-shadow:0 0 0 4px var(--glow-1);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 4px var(--glow-1); }
+    50%{ box-shadow:0 0 0 8px transparent; }
+  }
+  .timeline-period{ font-size:.78rem; font-weight:600; letter-spacing:.04em; color:var(--brand-solid); text-transform:uppercase; font-variant-numeric:tabular-nums; }
+  .timeline-role{ font-family:"Sora"; font-weight:600; font-size:1.15rem; margin-top:6px; }
+  .timeline-company{ color:var(--fg-muted); font-size:.9rem; margin-top:2px; }
+  .timeline-bullets{ margin:14px 0 0; padding-left:18px; color:var(--fg-muted); font-size:.92rem; }
+  .timeline-bullets li{ margin-bottom:6px; }
+  .timeline-bullets li:last-child{ margin-bottom:0; }
+
+  /* ---------- projects ---------- */
+  .project-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:760px){ .project-grid{ grid-template-columns:1fr; } }
+  .project-card{
+    background:var(--surface-1); border:1px solid var(--border); border-radius:14px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .project-card:hover{ transform:translateY(-3px); border-color:var(--border-strong); background:var(--surface-2); }
+  .project-card:hover .project-thumb{ transform:scale(1.03); }
+  .project-body{ padding:22px 26px 26px; display:flex; flex-direction:column; gap:14px; flex-grow:1; }
+
+  /* Each project gets an abstract, hand-picked pattern instead of a stock photo —
+     a nod to what the project actually is (ledger rows, a beacon's rings, kiln
+     firing-bands, tidal curves) rather than a generic screenshot placeholder. */
+  .project-thumb{
+    aspect-ratio:16/9; position:relative; overflow:hidden; flex-shrink:0;
+    background:linear-gradient(135deg, var(--brand-a), var(--brand-b));
+    transition:transform .35s ease;
+  }
+  .project-thumb::before{
+    content:""; position:absolute; inset:0; mix-blend-mode:overlay; opacity:.6;
+  }
+  .thumb-ledger::before{
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.95) 0 1px, transparent 1px 17px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.95) 0 1px, transparent 1px 58px);
+  }
+  .thumb-beacon::before{
+    background-image: repeating-radial-gradient(circle at 28% 32%, transparent 0 10px, rgba(255,255,255,.9) 11px 13px, transparent 14px 30px);
+  }
+  .thumb-kiln::before{
+    background-image: repeating-linear-gradient(118deg, rgba(255,255,255,.95) 0 3px, transparent 3px 24px);
+  }
+  .thumb-tidal::before{
+    background-image: repeating-radial-gradient(ellipse 220px 90px at 50% 128%, rgba(255,255,255,.9) 0 2px, transparent 2px 16px);
+  }
+  .thumb-mark{
+    position:absolute; bottom:10px; left:14px; font-family:"Sora"; font-weight:700;
+    font-size:1.7rem; letter-spacing:-.02em; color:rgba(255,255,255,.94);
+    text-shadow:0 2px 12px rgba(0,0,0,.25);
+  }
+  .project-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .project-title{ font-family:"Sora"; font-weight:600; font-size:1.1rem; }
+  .project-links{ display:flex; gap:8px; flex-shrink:0; }
+  .project-desc{ color:var(--fg-muted); font-size:.92rem; flex-grow:1; }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-size:.72rem; font-weight:600; padding:4px 10px; border-radius:20px;
+    background:var(--surface-2); border:1px solid var(--border); color:var(--fg-muted);
+  }
+
+  /* ---------- stack ---------- */
+  .stack-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  @media (max-width:760px){ .stack-groups{ grid-template-columns:1fr; } }
+  .stack-group-title{ font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-subtle); margin-bottom:14px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip{
+    font-size:.84rem; font-weight:500; padding:7px 14px; border-radius:9px;
+    background:var(--surface-1); border:1px solid var(--border); color:var(--fg-muted);
+  }
+
+  /* ---------- skills ---------- */
+  .skill-list{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:36px 24px;
+  }
+  .skill-row{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
+  .skill-ring{ position:relative; width:104px; height:104px; }
+  .skill-ring svg{ width:100%; height:100%; }
+  .skill-ring-track{ fill:none; stroke:var(--surface-2); }
+  .skill-ring-fill{
+    fill:none; stroke:url(#skillRingGradient); stroke-linecap:round;
+    transition:stroke-dashoffset .8s ease;
+  }
+  .skill-ring-value{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:"Sora"; font-weight:700; font-size:1.05rem; font-variant-numeric:tabular-nums;
+  }
+  .skill-name{ font-size:.85rem; font-weight:600; color:var(--fg-muted); max-width:150px; }
+
+  /* ---------- recommendations ---------- */
+  .rec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media (max-width:900px){ .rec-grid{ grid-template-columns:1fr; } }
+  .rec-card{
+    background:var(--surface-1); border:1px solid var(--border); border-radius:14px;
+    padding:26px; display:flex; flex-direction:column; gap:18px;
+  }
+  .rec-quote{ font-size:.94rem; color:var(--fg); flex-grow:1; }
+  .rec-quote::before{ content:"“"; } .rec-quote::after{ content:"”"; }
+  .rec-person{ display:flex; align-items:center; gap:12px; }
+  .rec-avatar{
+    width:38px; height:38px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg,var(--brand-a),var(--brand-b));
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Sora"; font-weight:700; font-size:.78rem; color:#fff;
+  }
+  .rec-name{ font-size:.88rem; font-weight:600; }
+  .rec-role{ font-size:.78rem; color:var(--fg-subtle); }
+
+  /* ---------- awards / talks (two-up list layout) ---------- */
+  .split-two{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+  @media (max-width:820px){ .split-two{ grid-template-columns:1fr; gap:64px; } }
+  .list-block h3{ font-family:"Sora"; font-size:1.15rem; font-weight:600; margin-bottom:20px; }
+  .list-row{
+    display:flex; align-items:baseline; gap:14px;
+    padding:14px 0; border-bottom:1px solid var(--border);
+  }
+  .list-row:first-of-type{ padding-top:0; }
+  .list-row:last-child{ border-bottom:none; }
+  .list-year{ font-size:.8rem; font-weight:600; color:var(--brand-solid); font-variant-numeric:tabular-nums; flex-shrink:0; width:44px; }
+  .list-body{ flex-grow:1; }
+  .list-title{ font-size:.92rem; font-weight:600; }
+  .list-sub{ font-size:.8rem; color:var(--fg-subtle); margin-top:2px; }
+  .list-link{
+    flex-shrink:0; color:var(--fg-subtle); display:flex; align-items:center;
+    transition:color .15s ease;
+  }
+  .list-link:hover{ color:var(--brand-solid); }
+  .list-link svg{ width:15px; height:15px; }
+
+  /* ---------- contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns:1fr 1.15fr; gap:56px; }
+  @media (max-width:820px){ .contact-grid{ grid-template-columns:1fr; gap:40px; } }
+  .contact-email{
+    display:inline-flex; align-items:center; gap:10px; margin-top:22px;
+    font-family:"Sora"; font-size:1.05rem; font-weight:600; text-decoration:none;
+    color:var(--fg); border-bottom:1px solid var(--border-strong); padding-bottom:4px;
+  }
+  .contact-email:hover{ color:var(--brand-solid); border-color:var(--brand-solid); }
+  .social-row{ display:flex; gap:10px; margin-top:26px; }
+
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-size:.82rem; font-weight:600; margin-bottom:7px; color:var(--fg-muted); }
+  .field input, .field textarea{
+    width:100%; padding:12px 14px; border-radius:9px; font-size:.92rem;
+    background:var(--surface-1); border:1px solid var(--border); color:var(--fg);
+    font-family:inherit; resize:vertical; transition:border-color .15s ease, background .15s ease;
+  }
+  .field input:focus, .field textarea:focus{
+    outline:none; border-color:var(--brand-solid); background:var(--surface-2);
+  }
+  .field textarea{ min-height:120px; }
+  .hp-field{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .form-status{
+    font-size:.86rem; margin-top:14px; min-height:1.2em;
+  }
+  .form-status.success{ color:var(--success); }
+  .form-status.error{ color:var(--danger); }
+
+  /* ---------- footer ---------- */
+  footer{ border-top:1px solid var(--border); padding:32px 0; }
+  .footer-inner{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    font-size:.82rem; color:var(--fg-subtle);
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-field" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="skillRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:var(--brand-a)"></stop>
+      <stop offset="100%" style="stop-color:var(--brand-b)"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand-mark"><span class="brand-dot"></span>André Oliveira</a>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#recommendations" data-i18n="nav.recommendations">Recommendations</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="icon-btn lang-btn" id="langToggle" type="button" aria-label="Switch language">
+        <span class="lang-en">EN</span><span class="divider">/</span><span class="lang-pt off">PT</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch theme">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg id="iconMenuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="iconMenuClose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#experience" data-i18n="nav.experience">Experience</a>
+    <a href="#projects" data-i18n="nav.projects">Projects</a>
+    <a href="#recommendations" data-i18n="nav.recommendations">Recommendations</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Open to new opportunities</span>
+      <h1>André Oliveira</h1>
+      <p class="tagline" data-i18n="hero.tagline">Senior Unity Developer building performant games and XR experiences — from gameplay architecture to the last frame.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.ctaProjects">View projects</a>
+        <a href="Senior_Unity_Developer_Andre_Oliveira_Resume.pdf" class="btn btn-ghost" data-i18n="hero.ctaResume">Download résumé</a>
+      </div>
+      <div class="hero-metrics">
+        <div><div class="metric-value">7+</div><div class="metric-label" data-i18n="hero.metricYears">Years experience</div></div>
+        <div><div class="metric-value">8+</div><div class="metric-label" data-i18n="hero.metricProjects">Projects shipped</div></div>
+        <div><div class="metric-value">3→60</div><div class="metric-label" data-i18n="hero.metricTalks">FPS turnarounds</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap reveal">
+      <div class="about-grid">
+        <div class="avatar">
+          <img src="Foto Andre.jpg" alt="André Oliveira" width="120" height="120">
+        </div>
+        <div class="about-text">
+          <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+          <h2 style="margin-top:14px;" data-i18n="about.title">7+ years shipping games that perform</h2>
+          <p style="margin-top:20px;" data-i18n="about.p1">I'm a Senior Unity Developer building games and XR products for mobile, console and immersive platforms. I specialize in modular game architecture and runtime performance — taking systems from unplayable frame rates to a stable 60 FPS by reworking CPU/GPU data flow and cutting garbage-collection pressure.</p>
+          <p data-i18n="about.p2">I've shipped Unity products for Samsung, mentored teams of developers, and spent 3+ years teaching Unity, game design and Scrum as a Game Development Instructor. Outside client work I'm a lifelong Star Wars fan and a die-hard tabletop RPG player — dice betrayals included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="experience.eyebrow">Experience</span>
+        <h2 data-i18n="experience.title">Where the last eight years went</h2>
+      </div>
+      <div class="timeline" id="timelineList"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="projects.eyebrow">Selected work</span>
+        <h2 data-i18n="projects.title">Projects worth a second look</h2>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= STACK ================= -->
+  <section id="stack">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="stack.eyebrow">Toolbox</span>
+        <h2 data-i18n="stack.title">What I build with</h2>
+      </div>
+      <div class="stack-groups">
+        <div>
+          <div class="stack-group-title" data-i18n="stack.frontend">Gameplay & Architecture</div>
+          <div class="chip-row">
+            <span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Game Architecture</span><span class="chip">Design Patterns</span><span class="chip">ScriptableObjects</span>
+          </div>
+        </div>
+        <div>
+          <div class="stack-group-title" data-i18n="stack.backend">Performance</div>
+          <div class="chip-row">
+            <span class="chip">Unity Profiler</span><span class="chip">CPU/GPU Profiling</span><span class="chip">Memory Management</span><span class="chip">Job System</span><span class="chip">async/await</span>
+          </div>
+        </div>
+        <div>
+          <div class="stack-group-title" data-i18n="stack.infra">XR & Platforms</div>
+          <div class="chip-row">
+            <span class="chip">AR Foundation</span><span class="chip">Meta SDK</span><span class="chip">MRTK</span><span class="chip">Android</span><span class="chip">iOS</span><span class="chip">Console</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="skills.eyebrow">Skills</span>
+        <h2 data-i18n="skills.title">Where I add the most value</h2>
+      </div>
+      <div class="skill-list" id="skillList"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= RECOMMENDATIONS ================= -->
+  <section id="recommendations">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="recommendations.eyebrow">Recommendations</span>
+        <h2 data-i18n="recommendations.title">What it's like to work together</h2>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= AWARDS + TALKS ================= -->
+  <section id="recognition">
+    <div class="wrap reveal">
+      <div class="split-two">
+        <div class="list-block">
+          <h3 data-i18n="awards.title">Awards &amp; certifications</h3>
+          <div id="awardsList"></div>
+        </div>
+        <div class="list-block">
+          <h3 data-i18n="talks.title">Talks &amp; workshops</h3>
+          <div id="talksList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="wrap reveal">
+      <div class="contact-grid">
+        <div>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+          <h2 style="margin-top:14px;" data-i18n="contact.title">Let's talk about your project</h2>
+          <p style="margin-top:16px; color:var(--fg-muted);" data-i18n="contact.lead">Open to senior/staff roles and select freelance engagements. I read everything that comes in below.</p>
+          <a href="#" id="emailLink" class="contact-email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+            <span id="emailText">reveal email</span>
+          </a>
+          <div class="social-row">
+            <a class="icon-btn" href="https://github.com/AndreWesley" target="_blank" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.2 10.2 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/andrewesley/" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.94 8.5H3.56V20.5H6.94V8.5ZM5.25 3.5A1.97 1.97 0 1 0 5.25 7.44 1.97 1.97 0 0 0 5.25 3.5ZM20.5 20.5V13.9c0-3.53-1.89-5.17-4.4-5.17a3.8 3.8 0 0 0-3.44 1.9h-.05V8.5H9.4c.05 1 0 12 0 12h3.21V13.94c0-.32.02-.64.12-.87.26-.64.85-1.31 1.85-1.31 1.3 0 1.82.99 1.82 2.44v6.3h3.1Z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://www.youtube.com/user/AWLOliveira/playlists" target="_blank" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12.2c0-2.2-.17-3.4-.4-4.15a3.1 3.1 0 0 0-2.2-2.2C17.9 5.4 12 5.4 12 5.4s-5.9 0-7.4.45a3.1 3.1 0 0 0-2.2 2.2C2.17 8.8 2 10 2 12.2s.17 3.4.4 4.15a3.1 3.1 0 0 0 2.2 2.2c1.5.45 7.4.45 7.4.45s5.9 0 7.4-.45a3.1 3.1 0 0 0 2.2-2.2c.23-.75.4-1.95.4-4.15ZM9.9 15.4V9l5.6 3.2-5.6 3.2Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="companyField">Company</label>
+            <input id="companyField" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="nameField" data-i18n="contact.formName">Name</label>
+            <input id="nameField" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="emailField" data-i18n="contact.formEmail">Email</label>
+            <input id="emailField" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="messageField" data-i18n="contact.formMessage">Message</label>
+            <textarea id="messageField" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" data-i18n="contact.formSubmit">Send message</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span id="footerRights">© 2026 André Oliveira. All rights reserved.</span>
+    <span data-i18n="footer.built">Built with a single HTML file.</span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG — the only two lines you need to touch to wire up
+   real contact delivery. Leave CONTACT_ENDPOINT empty and the
+   form falls back to a pre-filled mailto: link.
+   ============================================================ */
+const CONTACT_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx" or a Web3Forms endpoint
+const CONTACT_EMAIL    = "contact@andreoliveira.dev";
+
+/* ============================================================
+   i18n — static copy dictionary. EN is default.
+   ============================================================ */
+const I18N = {
+  en: {
+    nav:{ about:"About", experience:"Experience", projects:"Projects", recommendations:"Recommendations", contact:"Contact" },
+    hero:{
+      eyebrow:"Open to new opportunities",
+      tagline:"Senior Unity Developer building performant games and XR experiences — from gameplay architecture to the last frame.",
+      ctaProjects:"View projects", ctaResume:"Download résumé",
+      metricYears:"Years experience", metricProjects:"Projects shipped", metricTalks:"FPS turnarounds"
+    },
+    about:{
+      eyebrow:"About",
+      title:"7+ years shipping games that perform",
+      p1:"I'm a Senior Unity Developer building games and XR products for mobile, console and immersive platforms. I specialize in modular game architecture and runtime performance — taking systems from unplayable frame rates to a stable 60 FPS by reworking CPU/GPU data flow and cutting garbage-collection pressure.",
+      p2:"I've shipped Unity products for Samsung, mentored teams of developers, and spent 3+ years teaching Unity, game design and Scrum as a Game Development Instructor. Outside client work I'm a lifelong Star Wars fan and a die-hard tabletop RPG player — dice betrayals included."
+    },
+    experience:{ eyebrow:"Experience", title:"Where the last seven years went" },
+    projects:{ eyebrow:"Selected work", title:"Games and apps worth a second look", viewCode:"View", viewLive:"Live" },
+    stack:{ eyebrow:"Toolbox", title:"What I build with", frontend:"Gameplay & Architecture", backend:"Performance", infra:"XR & Platforms" },
+    skills:{ eyebrow:"Skills", title:"Where I add the most value" },
+    recommendations:{ eyebrow:"Recommendations", title:"What it's like to work together" },
+    awards:{ title:"Awards & certifications" },
+    talks:{ title:"Community & mentoring" },
+    contact:{
+      eyebrow:"Contact", title:"Let's talk about your project",
+      lead:"Open to Senior Unity Developer, Gameplay Programmer and Game Developer roles — remote and relocation included. I read everything that comes in below.",
+      formName:"Name", formEmail:"Email", formMessage:"Message",
+      formSubmit:"Send message", formSending:"Sending…",
+      formSuccess:"Thanks — your message is on its way. I'll reply within a couple of days.",
+      formErrorRequired:"Please fill in every field before sending.",
+      formErrorEmail:"That email address doesn't look right.",
+      formErrorSend:"Something went wrong sending this. Try again, or email me directly.",
+      revealEmail:"reveal email"
+    },
+    footer:{ built:"Built with a single HTML file." }
+  },
+  pt: {
+    nav:{ about:"Sobre", experience:"Experiência", projects:"Projetos", recommendations:"Recomendações", contact:"Contato" },
+    hero:{
+      eyebrow:"Aberto a novas oportunidades",
+      tagline:"Desenvolvedor Unity sênior construindo jogos e experiências XR performáticas — da arquitetura de gameplay ao último frame.",
+      ctaProjects:"Ver projetos", ctaResume:"Baixar currículo",
+      metricYears:"Anos de experiência", metricProjects:"Projetos entregues", metricTalks:"Ganhos de FPS"
+    },
+    about:{
+      eyebrow:"Sobre",
+      title:"7+ anos entregando jogos performáticos",
+      p1:"Sou Desenvolvedor Unity sênior, construindo jogos e produtos XR para mobile, console e plataformas imersivas. Sou especializado em arquitetura modular de jogos e performance em runtime — levando sistemas de frame rates injogáveis a 60 FPS estáveis, redesenhando o fluxo de dados CPU/GPU e reduzindo pressão de garbage collection.",
+      p2:"Já entreguei produtos Unity para a Samsung, orientei times de desenvolvedores e passei 3+ anos ensinando Unity, game design e Scrum como Instrutor de Desenvolvimento de Jogos. Fora do trabalho com clientes, sou fã de carteirinha de Star Wars e jogador raiz de RPG de mesa — traições dos dados incluídas."
+    },
+    experience:{ eyebrow:"Experiência", title:"Para onde foram os últimos sete anos" },
+    projects:{ eyebrow:"Trabalhos selecionados", title:"Jogos e apps que valem uma segunda olhada", viewCode:"Ver", viewLive:"Ao vivo" },
+    stack:{ eyebrow:"Caixa de ferramentas", title:"Com o que eu construo", frontend:"Gameplay & Arquitetura", backend:"Performance", infra:"XR & Plataformas" },
+    skills:{ eyebrow:"Habilidades", title:"Onde eu entrego mais valor" },
+    recommendations:{ eyebrow:"Recomendações", title:"Como é trabalhar junto" },
+    awards:{ title:"Prêmios e certificações" },
+    talks:{ title:"Comunidade e mentoria" },
+    contact:{
+      eyebrow:"Contato", title:"Vamos falar sobre seu projeto",
+      lead:"Aberto a vagas de Desenvolvedor Unity Sênior, Gameplay Programmer e Game Developer — remoto e realocação incluídos. Eu leio tudo que chega aqui embaixo.",
+      formName:"Nome", formEmail:"Email", formMessage:"Mensagem",
+      formSubmit:"Enviar mensagem", formSending:"Enviando…",
+      formSuccess:"Obrigado — sua mensagem está a caminho. Respondo em poucos dias.",
+      formErrorRequired:"Preencha todos os campos antes de enviar.",
+      formErrorEmail:"Esse endereço de email não parece válido.",
+      formErrorSend:"Algo deu errado ao enviar. Tente de novo ou me escreva direto.",
+      revealEmail:"revelar email"
+    },
+    footer:{ built:"Feito com um único arquivo HTML." }
+  }
+};
+
+/* ============================================================
+   DATA — timeline, projects, recommendations, awards, talks.
+   Each item carries its own en/pt copy so lists stay in sync.
+   ============================================================ */
+const EXPERIENCE = [
+  {
+    period:"Apr 2026 — Present", current:true,
+    en:{ role:"Unity Engineer", company:"Big Moxi Games (USA / Brazil)", bullets:[
+      "Reworked core game systems and eliminated memory/GC bottlenecks, raising performance from ~15 FPS to a stable 60 FPS on target hardware.",
+      "Took ownership of an early-stage Unity console prototype — project setup, gameplay, UI, systems, tools and integrations.",
+      "Designed modular systems using Observer, Object Pooling and Flyweight patterns to reduce coupling and increase runtime efficiency."
+    ]},
+    pt:{ role:"Unity Engineer", company:"Big Moxi Games (EUA / Brasil)", bullets:[
+      "Reestruturou sistemas centrais do jogo e eliminou gargalos de memória/GC, elevando a performance de ~15 FPS para 60 FPS estáveis no hardware alvo.",
+      "Assumiu um protótipo Unity em estágio inicial para console — setup do projeto, gameplay, UI, sistemas, ferramentas e integrações.",
+      "Projetou sistemas modulares com os padrões Observer, Object Pooling e Flyweight, reduzindo acoplamento e aumentando eficiência em runtime."
+    ]}
+  },
+  {
+    period:"Mar 2021 — Jul 2025", current:false,
+    en:{ role:"Software Developer (Unity)", company:"Sidia — Institute of Science and Technology (Samsung-founded)", bullets:[
+      "Shipped Unity-based products for Samsung, including Digikin Pocket Adventures and Creators Room, plus NDA-protected XR prototypes.",
+      "Eliminated a severe CPU bottleneck by redesigning CPU–GPU data flow and introducing parallel processing, raising performance from ~3 FPS to 27 FPS.",
+      "Mentored a team of five programmers and assumed technical leadership during the tech lead's absences."
+    ]},
+    pt:{ role:"Software Developer (Unity)", company:"Sidia — Instituto de Ciência e Tecnologia (fundado pela Samsung)", bullets:[
+      "Entregou produtos Unity para a Samsung, incluindo Digikin Pocket Adventures e Creators Room, além de protótipos XR sob NDA.",
+      "Eliminou um gargalo severo de CPU redesenhando o fluxo de dados CPU–GPU e introduzindo processamento paralelo, elevando a performance de ~3 FPS para 27 FPS.",
+      "Orientou um time de cinco programadores e assumiu a liderança técnica durante ausências do tech lead."
+    ]}
+  },
+  {
+    period:"Jun 2019 — Jan 2021", current:false,
+    en:{ role:"Unity Developer — Freelancer", company:"São Paulo, Brazil", bullets:[
+      "Built Unity games and AR/VR apps for Android and iOS using Vuforia, AR Foundation and Oculus Integration (Quest)."
+    ]},
+    pt:{ role:"Unity Developer — Freelancer", company:"São Paulo, Brasil", bullets:[
+      "Desenvolveu jogos Unity e apps AR/VR para Android e iOS usando Vuforia, AR Foundation e Oculus Integration (Quest)."
+    ]}
+  },
+  {
+    period:"Aug 2015 — Dec 2018", current:false,
+    en:{ role:"Game Development Instructor", company:"CESAR School, Recife", bullets:[
+      "Taught Unity, game programming, game design and Scrum to students over 3+ years.",
+      "Advised student teams through events like Technovation Challenge and SBGames."
+    ]},
+    pt:{ role:"Instrutor de Desenvolvimento de Jogos", company:"CESAR School, Recife", bullets:[
+      "Lecionou Unity, programação de jogos, game design e Scrum para alunos por mais de 3 anos.",
+      "Orientou equipes de alunos em eventos como Technovation Challenge e SBGames."
+    ]}
+  }
+];
+
+const PROJECTS = [
+  {
+    thumb:"beacon", mark:"◎", tags:["Unity","C#","AR Foundation"], links:{ repo:"https://galaxystore.samsung.com/detail/com.Sidia.DigikinPocketAdventures", live:"#" },
+    en:{ title:"Digikin Pocket Adventures", description:"An AR hide-and-seek game where kids move through real-world themed environments racing the clock to find digital Digikins. Shipped for Samsung on the Galaxy Store." },
+    pt:{ title:"Digikin Pocket Adventures", description:"Jogo AR de esconde-esconde onde crianças se movem por ambientes temáticos reais correndo contra o tempo pra encontrar Digikins digitais. Lançado para a Samsung na Galaxy Store." }
+  },
+  {
+    thumb:"tidal", mark:"◉", tags:["Unity","C#","XR"], links:{ repo:"https://play.google.com/store/apps/details?id=com.sidia.ctroom&hl=pt_BR", live:"#" },
+    en:{ title:"Creators Room", description:"An XR app for digital creators to customize avatars and record expressive 3D videos — built for YouTubers, TikTokers and content creators making professional-quality XR content." },
+    pt:{ title:"Creators Room", description:"App XR pra criadores digitais customizarem avatares e gravarem vídeos 3D expressivos — feito para YouTubers, TikTokers e criadores de conteúdo produzirem conteúdo XR de qualidade profissional." }
+  },
+  {
+    thumb:"kiln", mark:"◢", tags:["Unity","C#","FPS"], links:{ repo:"https://drive.google.com/file/d/1dTwwLx6PJ-lHpNewYc2XbwkjyI_mLr84/view?usp=sharing", live:"#" },
+    en:{ title:"Void Wizard", description:"A boomer shooter inspired by classic FPS games like Quake 3 — explore the arena, wield a melee weapon and ranged gear to defeat waves of enemies." },
+    pt:{ title:"Void Wizard", description:"Um boomer shooter inspirado em FPS clássicos como Quake 3 — explore a arena, use uma arma corpo a corpo e armas à distância pra derrotar ondas de inimigos." }
+  },
+  {
+    thumb:"ledger", mark:"▲", tags:["Unity","C#","Solo dev"], links:{ repo:"https://drive.google.com/file/d/1YyMMuA26PINvXAfyoZ2CaBC1sZ5yyQ7Z/view?usp=sharing", live:"#" },
+    en:{ title:"Dragon's Breath", description:"Control a dragon soaring above a medieval city — dodge incoming spears and blast fire breath to destroy the enemies. Solo-developed for Android." },
+    pt:{ title:"Dragon's Breath", description:"Controle um dragão voando sobre uma cidade medieval — desvie de lanças e solte fogo pra destruir os inimigos. Desenvolvido sozinho para Android." }
+  }
+];
+
+const SKILLS = [
+  { level:95, en:"Unity & gameplay programming", pt:"Unity e programação de gameplay" },
+  { level:92, en:"C# & game architecture", pt:"C# e arquitetura de jogos" },
+  { level:90, en:"Performance optimization (CPU/GPU/memory)", pt:"Otimização de performance (CPU/GPU/memória)" },
+  { level:85, en:"XR development (AR/VR/MR)", pt:"Desenvolvimento XR (AR/VR/MR)" },
+  { level:82, en:"Technical leadership & mentoring", pt:"Liderança técnica e mentoria" },
+  { level:70, en:"Shader development (CG/HLSL)", pt:"Desenvolvimento de shaders (CG/HLSL)" }
+];
+
+const RECOMMENDATIONS = [
+  {
+    initials:"GA",
+    en:{ quote:"Andre is an exceptional developer with extensive experience and a strong ability to see the bigger picture in software architecture. He would be a valuable asset to any team or organization.", name:"Gustavo Almeida Franco de Souza", role:"Software Leader Engineer, Sidia / Samsung — direct manager" },
+    pt:{ quote:"André é um desenvolvedor excepcional, com ampla experiência e forte capacidade de enxergar o todo na arquitetura de software. Seria um ativo valioso pra qualquer time ou organização.", name:"Gustavo Almeida Franco de Souza", role:"Software Leader Engineer, Sidia / Samsung — gestor direto" }
+  },
+  {
+    initials:"MC",
+    en:{ quote:"I had the opportunity to work with André Wesley on Unity3D projects, and he always impressed me with his ability to design clean, adaptable architectures and follow SOLID principles. He's also a great teammate — supportive, collaborative, and someone who naturally steps up to lead when needed.", name:"Matheus Kazuo Hoshihara Carvalho", role:"Senior Software Engineer | Tech Lead, Unity/XR & Game Systems" },
+    pt:{ quote:"Tive a oportunidade de trabalhar com André Wesley em projetos Unity3D, e ele sempre me impressionou pela capacidade de projetar arquiteturas limpas e adaptáveis seguindo princípios SOLID. Também é um ótimo colega de equipe — solícito, colaborativo, e alguém que naturalmente assume a liderança quando necessário.", name:"Matheus Kazuo Hoshihara Carvalho", role:"Senior Software Engineer | Tech Lead, Unity/XR & Game Systems" }
+  },
+  {
+    initials:"YR",
+    en:{ quote:"I had the pleasure of collaborating with André on Unity projects, and I was consistently impressed by both his technical skill and creativity. What stands out the most is his problem-solving mindset — when challenges arise, he brings solutions quickly, backed by clear reasoning and clean implementation.", name:"Yasmin Rodrigues", role:"Product Owner (PSPO I)" },
+    pt:{ quote:"Tive o prazer de colaborar com André em projetos Unity, e fiquei sempre impressionada com sua habilidade técnica e criatividade. O que mais se destaca é sua mentalidade de resolução de problemas — quando surgem desafios, ele traz soluções rápidas, com raciocínio claro e implementação limpa.", name:"Yasmin Rodrigues", role:"Product Owner (PSPO I)" }
+  },
+  {
+    initials:"GS",
+    en:{ quote:"André and I were coworkers for a whole year. As a talented Unity Programmer, he consistently demonstrated expertise in C# development and the ability to translate creative concepts into compelling interactive experiences. He was a valuable asset to the team, and is wholeheartedly recommended.", name:"Guilherme Souza", role:"Unity Dev | VR Developer | Game Dev — direct supervisor" },
+    pt:{ quote:"André e eu fomos colegas de trabalho por um ano inteiro. Como Unity Programmer talentoso, ele demonstrou consistentemente expertise em desenvolvimento C# e a capacidade de transformar conceitos criativos em experiências interativas cativantes. Foi um ativo valioso pro time, e é recomendado de coração.", name:"Guilherme Souza", role:"Unity Dev | VR Developer | Game Dev — supervisor direto" }
+  },
+  {
+    initials:"JS",
+    en:{ quote:"I had the opportunity to work with an extremely competent professional, who stands out for his ability to prioritize deadlines and deliver efficient solutions to complex challenges. He consistently demonstrates proactivity in seeking out new technologies and possesses excellent interpersonal communication skills.", name:"Jackson Daniel Silva Santana", role:"Unity Game Developer — same team" },
+    pt:{ quote:"Tive a oportunidade de trabalhar com um profissional extremamente competente, que se destaca pela capacidade de priorizar prazos e entregar soluções eficientes pra desafios complexos. Demonstra consistentemente proatividade na busca por novas tecnologias e possui excelentes habilidades de comunicação interpessoal.", name:"Jackson Daniel Silva Santana", role:"Unity Game Developer — mesma equipe" }
+  }
+];
+
+const AWARDS = [
+  { year:"2022", issuer:"Unity (expired 2025)", en:{ title:"Unity Certified Professional: Programmer" }, pt:{ title:"Unity Certified Professional: Programmer" } },
+  { year:"2022", issuer:"Holistic3D (Udemy)", en:{ title:"Shader Development From Scratch for Unity with CG" }, pt:{ title:"Shader Development From Scratch for Unity with CG" } },
+  { year:"2017", issuer:"CalArts (Coursera)", en:{ title:"Game Design: Art and Concepts Specialization" }, pt:{ title:"Game Design: Art and Concepts Specialization" } },
+  { year:"2016", issuer:"CESAR", en:{ title:"Scrum Training" }, pt:{ title:"Treinamento em Scrum" } },
+  { year:"2015", issuer:"Michigan State University (Coursera)", en:{ title:"Game Design and Development Specialization" }, pt:{ title:"Game Design and Development Specialization" } }
+];
+
+const TALKS = [
+  { year:"2017", event:"31-hour game jam", link:"#", en:{ title:"V.R.I.D.O.S. — built two skeletons carrying a fragile glass through a cooperative underworld" }, pt:{ title:"V.R.I.D.O.S. — dois esqueletos carregando um vidro frágil por um submundo cooperativo" } },
+  { year:"2015–2018", event:"CESAR School", link:"#", en:{ title:"Advised student teams for the Technovation Challenge" }, pt:{ title:"Orientou equipes de alunos no Technovation Challenge" } },
+  { year:"2015–2018", event:"CESAR School", link:"#", en:{ title:"Advised student teams for SBGames" }, pt:{ title:"Orientou equipes de alunos no SBGames" } },
+  { year:"2013–2015", event:"Fábrica de Software (UNIPÊ)", link:"#", en:{ title:"Volunteer and scholarship game development, university extension program" }, pt:{ title:"Desenvolvimento de jogos voluntário e com bolsa em programa de extensão universitária" } }
+];
+
+/* ============================================================
+   STATE + RENDER
+   ============================================================ */
+function safeGet(key){ try { return localStorage.getItem(key); } catch (e) { return null; } }
+function safeSet(key, value){ try { localStorage.setItem(key, value); } catch (e) { /* storage unavailable, ignore */ } }
+
+let currentLang = safeGet("portfolio-lang") || "en";
+
+function iconExternal(){
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+}
+
+function renderTimeline(lang){
+  const el = document.getElementById("timelineList");
+  el.innerHTML = EXPERIENCE.map(item => {
+    const c = item[lang];
+    return `<div class="timeline-item ${item.current ? "current" : ""}">
+      <span class="timeline-dot"></span>
+      <div class="timeline-period">${item.period}</div>
+      <div class="timeline-role">${c.role}</div>
+      <div class="timeline-company">${c.company}</div>
+      <ul class="timeline-bullets">${c.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+    </div>`;
+  }).join("");
+}
+
+function renderProjects(lang){
+  const el = document.getElementById("projectGrid");
+  const t = I18N[lang].projects;
+  el.innerHTML = PROJECTS.map(p => {
+    const c = p[lang];
+    return `<div class="project-card">
+      <div class="project-thumb thumb-${p.thumb}" aria-hidden="true"><span class="thumb-mark">${p.mark}</span></div>
+      <div class="project-body">
+        <div class="project-top">
+          <div class="project-title">${c.title}</div>
+          <div class="project-links">
+            <a class="icon-btn" href="${p.links.repo}" aria-label="${t.viewCode}: ${c.title}">${iconExternal()}</a>
+          </div>
+        </div>
+        <div class="project-desc">${c.description}</div>
+        <div class="tag-row">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function renderSkills(lang){
+  const el = document.getElementById("skillList");
+  const R = 42;
+  const C = 2 * Math.PI * R;
+  el.innerHTML = SKILLS.map(s => {
+    const offset = C - (s.level / 100) * C;
+    return `<div class="skill-row">
+      <div class="skill-ring">
+        <svg viewBox="0 0 100 100">
+          <circle class="skill-ring-track" cx="50" cy="50" r="${R}" stroke-width="4"></circle>
+          <circle class="skill-ring-fill" cx="50" cy="50" r="${R}" stroke-width="4"
+            stroke-dasharray="${C}" stroke-dashoffset="${offset}"
+            transform="rotate(-90 50 50)"></circle>
+        </svg>
+        <span class="skill-ring-value">${s.level}%</span>
+      </div>
+      <span class="skill-name">${s[lang]}</span>
+    </div>`;
+  }).join("");
+}
+
+function renderRecommendations(lang){
+  const el = document.getElementById("recGrid");
+  el.innerHTML = RECOMMENDATIONS.map(r => {
+    const c = r[lang];
+    return `<div class="rec-card">
+      <div class="rec-quote">${c.quote}</div>
+      <div class="rec-person">
+        <div class="rec-avatar">${r.initials}</div>
+        <div>
+          <div class="rec-name">${c.name}</div>
+          <div class="rec-role">${c.role}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function renderAwards(lang){
+  const el = document.getElementById("awardsList");
+  el.innerHTML = AWARDS.map(a => `<div class="list-row">
+    <span class="list-year">${a.year}</span>
+    <div class="list-body">
+      <div class="list-title">${a[lang].title}</div>
+      <div class="list-sub">${a.issuer}</div>
+    </div>
+  </div>`).join("");
+}
+
+function renderTalks(lang){
+  const el = document.getElementById("talksList");
+  el.innerHTML = TALKS.map(t => `<div class="list-row">
+    <span class="list-year">${t.year}</span>
+    <div class="list-body">
+      <div class="list-title">${t[lang].title}</div>
+      <div class="list-sub">${t.event}</div>
+    </div>
+    <a class="list-link" href="${t.link}" aria-label="Watch: ${t[lang].title}">${iconExternal()}</a>
+  </div>`).join("");
+}
+
+function applyStaticI18n(lang){
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  document.querySelectorAll("[data-i18n]").forEach(node => {
+    const path = node.getAttribute("data-i18n").split(".");
+    let val = I18N[lang];
+    for (const key of path) val = val && val[key];
+    if (typeof val === "string") node.textContent = val;
+  });
+  document.getElementById("footerRights").textContent =
+    lang === "pt" ? "© 2026 André Oliveira. Todos os direitos reservados." : "© 2026 André Oliveira. All rights reserved.";
+}
+
+function updateLangButton(lang){
+  document.querySelector(".lang-en").classList.toggle("off", lang !== "en");
+  document.querySelector(".lang-pt").classList.toggle("off", lang !== "pt");
+}
+
+function setLanguage(lang){
+  currentLang = lang;
+  safeSet("portfolio-lang", lang);
+  applyStaticI18n(lang);
+  renderTimeline(lang);
+  renderProjects(lang);
+  renderSkills(lang);
+  renderRecommendations(lang);
+  renderAwards(lang);
+  renderTalks(lang);
+  updateLangButton(lang);
+  resetFormStatus();
+}
+
+/* ---------- theme ---------- */
+function setTheme(theme){
+  document.documentElement.setAttribute("data-theme", theme);
+  safeSet("portfolio-theme", theme);
+  document.getElementById("iconSun").style.display = theme === "dark" ? "block" : "none";
+  document.getElementById("iconMoon").style.display = theme === "dark" ? "none" : "block";
+}
+
+/* ---------- email obfuscation ---------- */
+function initEmail(){
+  const link = document.getElementById("emailLink");
+  const text = document.getElementById("emailText");
+  let revealed = false;
+  function reveal(){
+    revealed = true;
+    text.textContent = CONTACT_EMAIL;
+    link.setAttribute("href", "mailto:" + CONTACT_EMAIL);
+  }
+  link.addEventListener("click", e => {
+    if (!revealed){ e.preventDefault(); reveal(); }
+  });
+}
+
+/* ---------- contact form ---------- */
+function resetFormStatus(){
+  const status = document.getElementById("formStatus");
+  status.textContent = "";
+  status.className = "form-status";
+}
+
+function initContactForm(){
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+  const submitBtn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const t = I18N[currentLang].contact;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const honeypot = form.company.value;
+
+    if (honeypot) return; // silently drop bot submissions
+
+    if (!name || !email || !message){
+      status.textContent = t.formErrorRequired;
+      status.className = "form-status error";
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      status.textContent = t.formErrorEmail;
+      status.className = "form-status error";
+      return;
+    }
+
+    if (!CONTACT_ENDPOINT){
+      const subject = encodeURIComponent("Portfolio contact from " + name);
+      const body = encodeURIComponent(message + "\n\n— " + name + " (" + email + ")");
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      status.textContent = t.formSuccess;
+      status.className = "form-status success";
+      form.reset();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    status.textContent = t.formSending;
+    status.className = "form-status";
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, message })
+      });
+      if (!res.ok) throw new Error("bad response");
+      status.textContent = t.formSuccess;
+      status.className = "form-status success";
+      form.reset();
+    } catch (err) {
+      status.textContent = t.formErrorSend;
+      status.className = "form-status error";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+/* ---------- scroll reveal ---------- */
+function initReveal(){
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)){
+    items.forEach(el => el.classList.add("in"));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){ entry.target.classList.add("in"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+}
+
+/* ---------- smooth anchor navigation ----------
+   CSS scroll-behavior + scroll-margin-top already do this in modern
+   browsers, but this JS fallback guarantees the jump (accounting for
+   the fixed nav's height) everywhere, including older Safari. */
+function initSmoothAnchors(){
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      if (!id) return; // plain "#" placeholders (résumé, social icons) keep default behavior
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = document.querySelector('.nav').offsetHeight;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+      window.scrollTo({ top, behavior: "smooth" });
+      history.pushState(null, "", "#" + id);
+    });
+  });
+}
+
+/* ---------- avatar alignment ----------
+   Between 760px and 1100px viewport width, #about's own narrower 760px
+   measure self-centers (giving the avatar extra left inset) while the
+   plain 1120px sections below it (Experience, Projects…) don't yet —
+   they only start self-centering past 1120px. Measure the exact gap and
+   cancel it so the avatar's left edge always matches theirs. Outside that
+   range the avatar already matches naturally (≤760px) or is handled by
+   the absolute-positioned "float in the gutter" CSS rule (≥1100px). */
+function alignAvatar(){
+  const avatar = document.querySelector(".avatar");
+  const reference = document.querySelector("#experience h2");
+  const aboutGrid = document.querySelector(".about-grid");
+  const aboutTitle = document.querySelector("#about h2");
+  if (!avatar || !reference) return;
+  const width = window.innerWidth;
+
+  if (width >= 1100){
+    // Floating-in-the-gutter mode: line the avatar's top up with the About
+    // heading, not the eyebrow above it, since the heading is the visual
+    // anchor it sits beside.
+    avatar.style.marginLeft = "";
+    if (aboutGrid && aboutTitle){
+      const top = aboutTitle.getBoundingClientRect().top - aboutGrid.getBoundingClientRect().top;
+      avatar.style.top = top + "px";
+    }
+    return;
+  }
+
+  avatar.style.top = "";
+  if (width <= 760){
+    avatar.style.marginLeft = "";
+    return;
+  }
+  avatar.style.marginLeft = "0px";
+  const gap = avatar.getBoundingClientRect().left - reference.getBoundingClientRect().left;
+  avatar.style.marginLeft = (-gap) + "px";
+}
+
+function initAvatarAlignment(){
+  alignAvatar();
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(alignAvatar, 100);
+  });
+}
+
+/* ---------- mobile menu ---------- */
+function initMobileMenu(){
+  const btn = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
+  const iconOpen = document.getElementById("iconMenuOpen");
+  const iconClose = document.getElementById("iconMenuClose");
+
+  function setOpen(open){
+    menu.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    iconOpen.style.display = open ? "none" : "block";
+    iconClose.style.display = open ? "block" : "none";
+  }
+
+  btn.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
+  menu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setOpen(false)));
+  window.addEventListener("resize", () => { if (window.innerWidth > 820) setOpen(false); });
+}
+
+/* ---------- init ---------- */
+(function init(){
+  // Dark is this template's default identity; light is the alt reached via the toggle.
+  const savedTheme = safeGet("portfolio-theme");
+  setTheme(savedTheme || "dark");
+
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+    setTheme(isDark ? "light" : "dark");
+  });
+  document.getElementById("langToggle").addEventListener("click", () => {
+    setLanguage(currentLang === "en" ? "pt" : "en");
+  });
+
+  setLanguage(currentLang);
+  initEmail();
+  initContactForm();
+  initReveal();
+  initMobileMenu();
+  initSmoothAnchors();
+  initAvatarAlignment();
+})();
+</script>
+</body>
+</html>
