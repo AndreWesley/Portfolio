@@ -289,13 +289,6 @@
     .about-grid{ position:relative; display:block; }
     .avatar{ position:absolute; top:0; right:calc(100% + 48px); }
   }
-  /* Between 760px (where #about's own narrower 760px measure stops
-     self-centering) and 1100px (where the rule above takes over), that
-     self-centering gives the avatar extra left inset the plain 1120px
-     sections below it (Experience, Projects…) don't have. JS measures
-     the exact gap and cancels it — see alignAvatar() — since a vw-based
-     calc() drifts by half the scrollbar's width and it isn't worth
-     chasing that precisely in CSS alone. */
   .avatar{
     width:120px; height:120px; border-radius:16px; flex-shrink:0;
     background:linear-gradient(135deg,var(--brand-a),var(--brand-b));
@@ -1193,41 +1186,24 @@ function initSmoothAnchors(){
 }
 
 /* ---------- avatar alignment ----------
-   Between 760px and 1100px viewport width, #about's own narrower 760px
-   measure self-centers (giving the avatar extra left inset) while the
-   plain 1120px sections below it (Experience, Projects…) don't yet —
-   they only start self-centering past 1120px. Measure the exact gap and
-   cancel it so the avatar's left edge always matches theirs. Outside that
-   range the avatar already matches naturally (≤760px) or is handled by
-   the absolute-positioned "float in the gutter" CSS rule (≥1100px). */
+   Below 1100px the avatar just stacks above the text (plain flex column,
+   no JS needed). At 1100px+ the CSS float-in-the-gutter rule takes over;
+   this only aligns its top edge with the About heading, not the eyebrow
+   above it, since the heading is the visual anchor it sits beside. */
 function alignAvatar(){
   const avatar = document.querySelector(".avatar");
-  const reference = document.querySelector("#experience h2");
   const aboutGrid = document.querySelector(".about-grid");
   const aboutTitle = document.querySelector("#about h2");
-  if (!avatar || !reference) return;
-  const width = window.innerWidth;
+  if (!avatar) return;
 
-  if (width >= 1100){
-    // Floating-in-the-gutter mode: line the avatar's top up with the About
-    // heading, not the eyebrow above it, since the heading is the visual
-    // anchor it sits beside.
-    avatar.style.marginLeft = "";
+  if (window.innerWidth >= 1100){
     if (aboutGrid && aboutTitle){
       const top = aboutTitle.getBoundingClientRect().top - aboutGrid.getBoundingClientRect().top;
       avatar.style.top = top + "px";
     }
     return;
   }
-
   avatar.style.top = "";
-  if (width <= 760){
-    avatar.style.marginLeft = "";
-    return;
-  }
-  avatar.style.marginLeft = "0px";
-  const gap = avatar.getBoundingClientRect().left - reference.getBoundingClientRect().left;
-  avatar.style.marginLeft = (-gap) + "px";
 }
 
 function initAvatarAlignment(){
