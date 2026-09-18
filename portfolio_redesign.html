@@ -400,6 +400,65 @@
     background:var(--surface-2); border:1px solid var(--border); color:var(--fg-muted);
   }
 
+  /* ---------- project wheel (drag/scroll carousel) ---------- */
+  .wheel-wrap{
+    position:relative; display:flex; align-items:center; justify-content:center;
+    height:340px; touch-action:pan-y;
+  }
+  .wheel-stage{
+    position:relative; width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    cursor:grab; user-select:none;
+  }
+  .wheel-stage.dragging{ cursor:grabbing; }
+  .wheel-card{
+    position:absolute; top:50%; left:50%;
+    width:min(300px, 60vw); aspect-ratio:16/9;
+    border-radius:14px; overflow:hidden;
+    border:1px solid var(--border); background:var(--surface-1);
+    box-shadow:0 24px 48px -24px var(--shadow);
+    transition:transform .45s cubic-bezier(.22,.9,.32,1), opacity .45s ease, filter .45s ease;
+    will-change:transform;
+  }
+  .wheel-stage.dragging .wheel-card{ transition:opacity .3s ease, filter .3s ease; }
+  .wheel-card img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    pointer-events:none; -webkit-user-drag:none;
+  }
+  .wheel-card.active{ border-color:var(--border-strong); cursor:default; }
+  .wheel-card:not(.active){ cursor:pointer; }
+
+  .wheel-arrow{
+    flex-shrink:0; width:40px; height:40px; border-radius:50%; z-index:5;
+    border:1px solid var(--border); background:var(--surface-1); color:var(--fg);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .wheel-arrow:hover{ background:var(--surface-2); border-color:var(--border-strong); }
+  .wheel-arrow:active{ transform:scale(.92); }
+  .wheel-arrow svg{ width:18px; height:18px; }
+  @media (max-width:640px){ .wheel-arrow{ display:none; } }
+
+  .wheel-info{ max-width:520px; margin:28px auto 0; text-align:center; }
+  .wheel-info .project-title{ font-size:1.15rem; }
+  .wheel-info .project-desc{ margin-top:8px; }
+  .wheel-info .tag-row{ justify-content:center; margin-top:12px; }
+  .wheel-info .wheel-link{
+    display:inline-flex; align-items:center; gap:7px; margin-top:16px;
+    font-size:.85rem; font-weight:600; color:var(--fg); text-decoration:none;
+    border-bottom:1px solid var(--border-strong); padding-bottom:3px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .wheel-info .wheel-link:hover{ color:var(--brand-solid); border-color:var(--brand-solid); }
+  .wheel-info .wheel-link svg{ width:15px; height:15px; }
+
+  .wheel-dots{ display:flex; align-items:center; justify-content:center; gap:8px; margin-top:20px; }
+  .wheel-dot{
+    width:8px; height:8px; border-radius:50%; padding:0; border:none;
+    background:var(--surface-2); cursor:pointer; transition:background .2s ease, transform .2s ease;
+  }
+  .wheel-dot.active{ background:var(--brand-solid); transform:scale(1.3); }
+
   /* ---------- xr prototypes ---------- */
   .xr-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
   @media (max-width:980px){ .xr-grid{ grid-template-columns:1fr 1fr; } }
@@ -422,32 +481,27 @@
   .xr-title{ font-family:"Space Grotesk"; font-weight:600; font-size:.88rem; }
 
   /* ---------- stack ---------- */
-  .stack-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-  @media (max-width:760px){ .stack-groups{ grid-template-columns:1fr; } }
-  .stack-group-title{ font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-subtle); margin-bottom:14px; }
-  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .stack-groups{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; }
+  @media (max-width:900px){ .stack-groups{ grid-template-columns:1fr; } }
+  .stack-group-title{ font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--fg-subtle); margin-bottom:16px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
   .chip{
-    font-size:.84rem; font-weight:500; padding:7px 14px; border-radius:9px;
+    font-size:.82rem; font-weight:500; padding:8px 14px; border-radius:8px;
     background:var(--surface-1); border:1px solid var(--border); color:var(--fg-muted);
   }
 
   /* ---------- skills ---------- */
   .skill-list{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:36px 24px;
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(120px,1fr)); gap:28px 16px;
   }
-  .skill-row{ display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; }
-  .skill-ring{ position:relative; width:104px; height:104px; }
-  .skill-ring svg{ width:100%; height:100%; }
-  .skill-ring-track{ fill:none; stroke:var(--surface-2); }
-  .skill-ring-fill{
-    fill:none; stroke:url(#skillRingGradient); stroke-linecap:round;
-    transition:stroke-dashoffset .8s ease;
+  .skill-row{ display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
+  .skill-icon{
+    width:56px; height:56px; display:flex; align-items:center; justify-content:center;
+    background:var(--surface-1); border:1px solid var(--border); border-radius:12px;
+    color:var(--brand-solid);
   }
-  .skill-ring-value{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-family:"Space Grotesk"; font-weight:700; font-size:1.05rem; font-variant-numeric:tabular-nums;
-  }
-  .skill-name{ font-size:.85rem; font-weight:600; color:var(--fg-muted); max-width:150px; }
+  .skill-icon svg{ width:24px; height:24px; stroke:var(--brand-solid); }
+  .skill-name{ font-size:.85rem; font-weight:600; color:var(--fg-muted); max-width:120px; }
 
   /* ---------- recommendations ---------- */
   .rec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -636,20 +690,30 @@
         <span class="eyebrow" data-i18n="projects.eyebrow">Selected work</span>
         <h2 data-i18n="projects.title">Projects worth a second look</h2>
       </div>
-      <div class="project-grid" id="projectGrid"></div>
+      <div class="wheel-wrap">
+        <button class="wheel-arrow wheel-arrow-l" id="wheelPrev" type="button" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="wheel-stage" id="projectWheel"></div>
+        <button class="wheel-arrow wheel-arrow-r" id="wheelNext" type="button" aria-label="Next project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="wheel-info" id="wheelInfo"></div>
+      <div class="wheel-dots" id="wheelDots"></div>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <!-- ================= XR PROTOTYPES ================= -->
-  <section id="xr">
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
     <div class="wrap reveal">
       <div class="section-head">
-        <span class="eyebrow" data-i18n="xr.eyebrow">Early prototypes</span>
-        <h2 data-i18n="xr.title">Extended reality experiments</h2>
+        <span class="eyebrow" data-i18n="skills.eyebrow">Skills</span>
+        <h2 data-i18n="skills.title">Where I add the most value</h2>
       </div>
-      <div class="xr-grid" id="xrGrid"></div>
+      <div class="skill-list" id="skillList"></div>
     </div>
   </section>
 
@@ -664,37 +728,30 @@
       </div>
       <div class="stack-groups">
         <div>
-          <div class="stack-group-title" data-i18n="stack.frontend">Gameplay & Architecture</div>
+          <div class="stack-group-title" data-i18n="stack.core">CORE DEVELOPMENT</div>
           <div class="chip-row">
-            <span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Game Architecture</span><span class="chip">Design Patterns</span><span class="chip">ScriptableObjects</span>
+            <span class="chip">C#</span><span class="chip">.NET</span><span class="chip">Object-Oriented Programming</span><span class="chip">Design Patterns</span><span class="chip">Data-Driven Design</span><span class="chip">3D Math</span>
           </div>
         </div>
         <div>
-          <div class="stack-group-title" data-i18n="stack.backend">Performance</div>
+          <div class="stack-group-title" data-i18n="stack.gameplay">UNITY & GAMEPLAY</div>
           <div class="chip-row">
-            <span class="chip">Unity Profiler</span><span class="chip">CPU/GPU Profiling</span><span class="chip">Memory Management</span><span class="chip">Job System</span><span class="chip">async/await</span>
+            <span class="chip">Game Architecture</span><span class="chip">ScriptableObjects</span><span class="chip">UI / Inputs / Physics</span><span class="chip">SDK Integration</span><span class="chip">Gameplay Systems</span><span class="chip">Custom Inspector</span>
           </div>
         </div>
         <div>
-          <div class="stack-group-title" data-i18n="stack.infra">XR & Platforms</div>
+          <div class="stack-group-title" data-i18n="stack.performance">PERFORMANCE & XR</div>
           <div class="chip-row">
-            <span class="chip">AR Foundation</span><span class="chip">Meta SDK</span><span class="chip">MRTK</span><span class="chip">Android</span><span class="chip">iOS</span><span class="chip">Console</span>
+            <span class="chip">Unity Profiler</span><span class="chip">CPU / GPU / Memory / GC</span><span class="chip">Multithreading / Job System</span><span class="chip">AR Foundation</span><span class="chip">Meta SDK / MRTK</span>
+          </div>
+        </div>
+        <div>
+          <div class="stack-group-title" data-i18n="stack.tools">TOOLS & PLATFORMS</div>
+          <div class="chip-row">
+            <span class="chip">Git / SVN</span><span class="chip">Test-driven Development (TDD) / Code Review</span><span class="chip">Android / iOS / Windows / Console</span><span class="chip">Scrum</span><span class="chip">AI-assisted Development</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ================= SKILLS ================= -->
-  <section id="skills">
-    <div class="wrap reveal">
-      <div class="section-head">
-        <span class="eyebrow" data-i18n="skills.eyebrow">Skills</span>
-        <h2 data-i18n="skills.title">Where I add the most value</h2>
-      </div>
-      <div class="skill-list" id="skillList"></div>
     </div>
   </section>
 
@@ -793,7 +850,7 @@
    real contact delivery. Leave CONTACT_ENDPOINT empty and the
    form falls back to a pre-filled mailto: link.
    ============================================================ */
-const CONTACT_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx" or a Web3Forms endpoint
+const CONTACT_ENDPOINT = "https://formsubmit.co/contact@andreoliveira.dev";
 const CONTACT_EMAIL    = "contact@andreoliveira.dev";
 
 /* ============================================================
@@ -818,7 +875,7 @@ const I18N = {
     experience:{ eyebrow:"Experience", title:"The journey so far" },
     projects:{ eyebrow:"Selected work", title:"Games and apps I've built", viewCode:"View", viewLive:"Live" },
     xr:{ eyebrow:"Early prototypes", title:"Extended reality experiments" },
-    stack:{ eyebrow:"Toolbox", title:"What I build with", frontend:"Gameplay & Architecture", backend:"Performance", infra:"XR & Platforms" },
+    stack:{ eyebrow:"Toolbox", title:"What I build with", core:"CORE DEVELOPMENT", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"TOOLS & PLATFORMS" },
     skills:{ eyebrow:"Skills", title:"Where I add the most value" },
     recommendations:{ eyebrow:"Recommendations", title:"What it's like to work together" },
     awards:{ title:"Awards & certifications" },
@@ -853,7 +910,7 @@ const I18N = {
     experience:{ eyebrow:"Experiência", title:"A trajetória até aqui" },
     projects:{ eyebrow:"Trabalhos selecionados", title:"Jogos e apps que eu construí", viewCode:"Ver", viewLive:"Ao vivo" },
     xr:{ eyebrow:"Protótipos iniciais", title:"Experimentos em realidade estendida" },
-    stack:{ eyebrow:"Ferramentas", title:"Com o que eu construo", frontend:"Gameplay & Arquitetura", backend:"Performance", infra:"XR & Plataformas" },
+    stack:{ eyebrow:"Ferramentas", title:"Com o que eu construo", core:"DESENVOLVIMENTO CORE", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"FERRAMENTAS & PLATAFORMAS" },
     skills:{ eyebrow:"Habilidades", title:"Onde eu entrego mais valor" },
     recommendations:{ eyebrow:"Recomendações", title:"Como é trabalhar junto" },
     awards:{ title:"Prêmios e certificações" },
@@ -948,32 +1005,13 @@ const PROJECTS = [
   }
 ];
 
-const XR_PROTOTYPES = [
-  {
-    img:"assets/images/xr-ekantika-notebook.jpg", video:"https://youtu.be/mUvyTPkL_rc", tag:"AR",
-    en:{ title:"Ekantika's Notebook App" }, pt:{ title:"Ekantika's Notebook App" }
-  },
-  {
-    img:"assets/images/xr-virtual-picture.jpg", video:"https://youtu.be/tF-CzsZ11mw", tag:"AR",
-    en:{ title:"Virtual Picture" }, pt:{ title:"Quadro Virtual" }
-  },
-  {
-    img:"assets/images/xr-house-vr.jpg", video:"https://youtu.be/Hbj5RuBOy_g", tag:"VR",
-    en:{ title:"House VR" }, pt:{ title:"Casa VR" }
-  },
-  {
-    img:"assets/images/xr-hangar-vr.jpg", video:"https://youtu.be/TsA-hkY4s70", tag:"VR",
-    en:{ title:"Hangar VR" }, pt:{ title:"Hangar VR" }
-  }
-];
-
 const SKILLS = [
-  { level:95, en:"Unity & gameplay programming", pt:"Unity e programação de gameplay" },
-  { level:92, en:"C# & game architecture", pt:"C# e arquitetura de jogos" },
-  { level:90, en:"Performance optimization (CPU/GPU/memory)", pt:"Otimização de performance (CPU/GPU/memória)" },
-  { level:85, en:"XR development (AR/VR/MR)", pt:"Desenvolvimento XR (AR/VR/MR)" },
-  { level:82, en:"Technical leadership & mentoring", pt:"Liderança técnica e mentoria" },
-  { level:70, en:"Shader development (CG/HLSL)", pt:"Desenvolvimento de shaders (CG/HLSL)" }
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 17h20"/><path d="M6 20h12"/></svg>', en:"Unity & gameplay programming", pt:"Unity e programação de gameplay" },
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>', en:"C# & game architecture", pt:"C# e arquitetura de jogos" },
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>', en:"Performance optimization", pt:"Otimização de performance" },
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>', en:"XR development (AR/VR/MR)", pt:"Desenvolvimento XR (AR/VR/MR)" },
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>', en:"Technical leadership", pt:"Liderança técnica" },
+  { icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>', en:"Shader development", pt:"Desenvolvimento de shaders" }
 ];
 
 const RECOMMENDATIONS = [
@@ -1045,64 +1083,157 @@ function renderTimeline(lang){
   }).join("");
 }
 
-function renderProjects(lang){
-  const el = document.getElementById("projectGrid");
-  const t = I18N[lang].projects;
-  el.innerHTML = PROJECTS.map(p => {
-    const c = p[lang];
-    return `<div class="project-card">
-      <div class="project-thumb"><img src="${p.img}" alt="${c.title}" loading="lazy"></div>
-      <div class="project-body">
-        <div class="project-top">
-          <div class="project-title">${c.title}</div>
-          <div class="project-links">
-            <a class="icon-btn" href="${p.links.repo}" aria-label="${t.viewCode}: ${c.title}">${iconExternal()}</a>
-          </div>
-        </div>
-        <div class="project-desc">${c.description}</div>
-        <div class="tag-row">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
-      </div>
-    </div>`;
-  }).join("");
+/* ---------- project wheel: drag/scroll carousel, Digikin centered first ---------- */
+let wheelIndex = 0;
+let wheelDragging = false;
+let wheelDragStartX = 0;
+let wheelDragMoved = 0;
+let wheelLastWheelTime = 0;
+
+function wheelOffset(index){
+  const n = PROJECTS.length;
+  let offset = index - wheelIndex;
+  if (offset > n / 2) offset -= n;
+  if (offset < -n / 2) offset += n;
+  return offset;
 }
 
-function renderXR(lang){
-  const el = document.getElementById("xrGrid");
-  el.innerHTML = XR_PROTOTYPES.map(x => {
-    const c = x[lang];
-    return `<a class="xr-card" href="${x.video}" target="_blank" rel="noopener">
-      <div class="xr-thumb">
-        <img src="${x.img}" alt="${c.title}" loading="lazy">
-        <div class="xr-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-      </div>
-      <div class="xr-body">
-        <span class="xr-title">${c.title}</span>
-        <span class="tag">${x.tag}</span>
-      </div>
-    </a>`;
+function wheelCardTransform(offset){
+  const abs = Math.abs(offset);
+  const sign = Math.sign(offset);
+  if (abs === 0) return { x: 0, y: 0, rot: 0, scale: 1, opacity: 1, z: 10 };
+  const x = sign * (150 + (abs - 1) * 130);
+  const y = 26 * abs;
+  const rot = sign * (14 + (abs - 1) * 10);
+  const scale = Math.max(1 - abs * 0.16, 0.56);
+  const opacity = abs > 2 ? 0 : Math.max(1 - abs * 0.35, 0.35);
+  return { x, y, rot, scale, opacity, z: 10 - abs };
+}
+
+function renderProjects(lang){
+  const el = document.getElementById("projectWheel");
+  el.innerHTML = PROJECTS.map((p, i) => {
+    const c = p[lang];
+    return `<div class="wheel-card" data-index="${i}">
+      <img src="${p.img}" alt="${c.title}" loading="lazy" draggable="false">
+    </div>`;
   }).join("");
+  el.querySelectorAll(".wheel-card").forEach(card => {
+    card.addEventListener("click", () => {
+      if (wheelDragMoved > 6) return; // ignore click right after a drag
+      const i = Number(card.dataset.index);
+      if (i !== wheelIndex){ wheelIndex = i; updateWheel(); }
+    });
+  });
+  renderWheelDots();
+  updateWheel();
+}
+
+function renderWheelDots(){
+  const el = document.getElementById("wheelDots");
+  el.innerHTML = PROJECTS.map((_, i) =>
+    `<button class="wheel-dot" data-index="${i}" aria-label="Project ${i + 1}"></button>`
+  ).join("");
+  el.querySelectorAll(".wheel-dot").forEach(dot => {
+    dot.addEventListener("click", () => {
+      wheelIndex = Number(dot.dataset.index);
+      updateWheel();
+    });
+  });
+}
+
+function updateWheel(){
+  const cards = document.querySelectorAll(".wheel-card");
+  cards.forEach(card => {
+    const i = Number(card.dataset.index);
+    const offset = wheelOffset(i);
+    const t = wheelCardTransform(offset);
+    card.style.transform = `translate(-50%, -50%) translate(${t.x}px, ${t.y}px) rotate(${t.rot}deg) scale(${t.scale})`;
+    card.style.opacity = t.opacity;
+    card.style.zIndex = t.z;
+    card.classList.toggle("active", offset === 0);
+  });
+  document.querySelectorAll(".wheel-dot").forEach(dot => {
+    dot.classList.toggle("active", Number(dot.dataset.index) === wheelIndex);
+  });
+  renderWheelInfo(currentLang);
+}
+
+function renderWheelInfo(lang){
+  const el = document.getElementById("wheelInfo");
+  const t = I18N[lang].projects;
+  const p = PROJECTS[wheelIndex];
+  const c = p[lang];
+  el.innerHTML = `
+    <div class="project-title">${c.title}</div>
+    <div class="project-desc">${c.description}</div>
+    <div class="tag-row">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+    <a class="wheel-link" href="${p.links.repo}" target="_blank" rel="noopener">${t.viewCode} ${iconExternal()}</a>
+  `;
+}
+
+function wheelStep(dir){
+  const n = PROJECTS.length;
+  wheelIndex = (wheelIndex + dir + n) % n;
+  updateWheel();
+}
+
+function initWheel(){
+  const stage = document.getElementById("projectWheel");
+  const prevBtn = document.getElementById("wheelPrev");
+  const nextBtn = document.getElementById("wheelNext");
+
+  prevBtn.addEventListener("click", () => wheelStep(-1));
+  nextBtn.addEventListener("click", () => wheelStep(1));
+
+  function dragStart(x){
+    wheelDragging = true;
+    wheelDragStartX = x;
+    wheelDragMoved = 0;
+    stage.classList.add("dragging");
+  }
+  function dragMove(x){
+    if (!wheelDragging) return;
+    wheelDragMoved = Math.max(wheelDragMoved, Math.abs(x - wheelDragStartX));
+  }
+  function dragEnd(x){
+    if (!wheelDragging) return;
+    wheelDragging = false;
+    stage.classList.remove("dragging");
+    const delta = x - wheelDragStartX;
+    if (Math.abs(delta) > 40){ wheelStep(delta < 0 ? 1 : -1); }
+  }
+
+  stage.addEventListener("mousedown", e => { dragStart(e.clientX); e.preventDefault(); });
+  window.addEventListener("mousemove", e => dragMove(e.clientX));
+  window.addEventListener("mouseup", e => dragEnd(e.clientX));
+
+  stage.addEventListener("touchstart", e => dragStart(e.touches[0].clientX), { passive: true });
+  stage.addEventListener("touchmove", e => dragMove(e.touches[0].clientX), { passive: true });
+  stage.addEventListener("touchend", e => dragEnd(e.changedTouches[0].clientX));
+
+  stage.addEventListener("wheel", e => {
+    e.preventDefault();
+    const now = Date.now();
+    if (now - wheelLastWheelTime < 350) return; // throttle
+    wheelLastWheelTime = now;
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    wheelStep(delta > 0 ? 1 : -1);
+  }, { passive: false });
+
+  window.addEventListener("resize", updateWheel);
 }
 
 function renderSkills(lang){
   const el = document.getElementById("skillList");
-  const R = 42;
-  const C = 2 * Math.PI * R;
   el.innerHTML = SKILLS.map(s => {
-    const offset = C - (s.level / 100) * C;
     return `<div class="skill-row">
-      <div class="skill-ring">
-        <svg viewBox="0 0 100 100">
-          <circle class="skill-ring-track" cx="50" cy="50" r="${R}" stroke-width="4"></circle>
-          <circle class="skill-ring-fill" cx="50" cy="50" r="${R}" stroke-width="4"
-            stroke-dasharray="${C}" stroke-dashoffset="${offset}"
-            transform="rotate(-90 50 50)"></circle>
-        </svg>
-        <span class="skill-ring-value">${s.level}%</span>
-      </div>
+      <div class="skill-icon">${s.icon}</div>
       <span class="skill-name">${s[lang]}</span>
     </div>`;
   }).join("");
 }
+
 
 function renderRecommendations(lang){
   const el = document.getElementById("recGrid");
@@ -1186,7 +1317,6 @@ function setLanguage(lang){
   applyStaticI18n(lang);
   renderTimeline(lang);
   renderProjects(lang);
-  renderXR(lang);
   renderSkills(lang);
   renderRecommendations(lang);
   renderAwards(lang);
@@ -1382,6 +1512,7 @@ function initMobileMenu(){
   initContactForm();
   initReveal();
   initMobileMenu();
+  initWheel();
   initSmoothAnchors();
   initAvatarAlignment();
   initBrandSwap();
