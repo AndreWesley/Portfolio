@@ -904,7 +904,7 @@ const I18N = {
     },
     about:{
       eyebrow:"Sobre",
-      title:"{years}+ anos entregando jogos e apps com qualidade",
+      title:"{years}+ anos entregando jogos e apps com performance",
       p1:"Sou Desenvolvedor Unity sênior, construindo jogos e produtos XR para mobile, console e plataformas imersivas. Sou especializado em arquitetura modular de jogos e performance em runtime, levando sistemas de frame rates injogáveis a 60 FPS estáveis, redesenhando o fluxo de dados CPU/GPU e reduzindo pressão de garbage collection.",
       p2:"Já entreguei produtos Unity para a Samsung, orientei times de desenvolvedores e passei 3+ anos ensinando Unity, game design e Scrum como Instrutor de Desenvolvimento de Jogos. Fora do trabalho com clientes, sou fã de carteirinha de Star Wars e jogador raiz de RPG de mesa, traições dos dados incluídas."
     },
@@ -1278,7 +1278,8 @@ function renderTalks(lang){
 
 function applyStaticI18n(lang){
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-  const years = new Date().getFullYear() - 2019;
+  const year = new Date().getFullYear();
+  const years = year - 2019;
   document.querySelectorAll("[data-i18n]").forEach(node => {
     const path = node.getAttribute("data-i18n").split(".");
     let val = I18N[lang];
@@ -1286,7 +1287,7 @@ function applyStaticI18n(lang){
     if (typeof val === "string") node.textContent = val.replace("{years}", years);
   });
   document.getElementById("footerRights").textContent =
-    lang === "pt" ? "© 2026 André Oliveira. Todos os direitos reservados." : "© 2026 André Oliveira. All rights reserved.";
+    lang === "pt" ? `© ${year} André Oliveira. Todos os direitos reservados.` : `© ${year} André Oliveira. All rights reserved.`;
   updateBrandText();
 }
 
