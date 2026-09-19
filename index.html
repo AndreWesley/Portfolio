@@ -1048,7 +1048,7 @@ const COURSES = [
 ];
 
 const TALKS = [
-  { year:"2022", event:"1 hour webinar", link:"#", en:{ title:"Unity Pro Tips" }, pt:{ title:"Unity Pro Tips" } },
+  { year:"2022", event:"1 hour webinar", link:"https://www.youtube.com/live/A0mC2LAuuho", en:{ title:"Unity Pro Tips" }, pt:{ title:"Unity Pro Tips" } },
   { year:"2022", event:"1.5 hour talk", link:"#", en:{ title:"Introduction to Software Architecture with Scriptable Objects" }, pt:{ title:"Introdução à Arquitetura de Software com Scriptable Objects" } },
   { year:"2022", event:"1.5 hour talk", link:"#", en:{ title:"Introduction to Unit Tests in Unity" }, pt:{ title:"Introdução a Testes Unitários em Unity" } },
   { year:"2018", event:"3-day workshop, 2.5h per day", link:"#", en:{ title:"Agile Thinking" }, pt:{ title:"Pensamento Ágil" } },
@@ -1272,7 +1272,7 @@ function renderTalks(lang){
       <div class="list-title">${t[lang].title}</div>
       <div class="list-sub">${t.event}</div>
     </div>
-    <a class="list-link" href="${t.link}" aria-label="Watch: ${t[lang].title}">${iconExternal()}</a>
+    ${t.link === "#" ? "" : `<a class="list-link" href="${t.link}" target="_blank" rel="noopener" aria-label="Watch: ${t[lang].title}">${iconExternal()}</a>`}
   </div>`).join("");
 }
 
