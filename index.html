@@ -643,7 +643,7 @@
         <a href="assets/files/Senior_Unity_Developer_Andre_Oliveira_Resume.pdf" class="btn btn-ghost" data-i18n="hero.ctaResume" download>Download résumé</a>
       </div>
       <div class="hero-metrics">
-        <div><div class="metric-value">7+</div><div class="metric-label" data-i18n="hero.metricYears">Years experience</div></div>
+        <div><div class="metric-value" data-i18n="hero.metricYearsValue">7+</div><div class="metric-label" data-i18n="hero.metricYears">Years experience</div></div>
         <div><div class="metric-value">2</div><div class="metric-label" data-i18n="hero.metricProjects">Projects shipped</div></div>
         <div><div class="metric-value">15→60&nbsp; |&nbsp; 3→27</div><div class="metric-label" data-i18n="hero.metricTalks">FPS turnarounds</div></div>
       </div>
@@ -865,11 +865,11 @@ const I18N = {
       eyebrow:"Open to new opportunities",
       tagline:"Senior Unity Developer building performant games and XR experiences, from gameplay architecture to the last frame.",
       ctaProjects:"View projects", ctaResume:"Download resume",
-      metricYears:"Years experience", metricProjects:"Projects shipped", metricTalks:"FPS turnarounds"
+      metricYearsValue:"{years}+", metricYears:"Years experience", metricProjects:"Projects shipped", metricTalks:"FPS turnarounds"
     },
     about:{
       eyebrow:"About",
-      title:"7+ years shipping games and apps that perform",
+      title:"{years}+ years shipping games and apps that perform",
       p1:"I'm a Senior Unity Developer building games and XR products for mobile, console and immersive platforms. I specialize in modular game architecture and runtime performance, taking systems from unplayable frame rates to a stable 60 FPS by reworking CPU/GPU data flow and cutting garbage-collection pressure.",
       p2:"I've shipped Unity products for Samsung, mentored teams of developers, and spent 3+ years teaching Unity, game design and Scrum as a Game Development Instructor. Outside client work I'm a lifelong Star Wars fan and a die-hard tabletop RPG player, dice betrayals included."
     },
@@ -900,11 +900,11 @@ const I18N = {
       eyebrow:"Aberto a novas oportunidades",
       tagline:"Desenvolvedor Unity sênior construindo jogos e experiências XR com qualidade, da arquitetura de gameplay ao último frame.",
       ctaProjects:"Ver projetos", ctaResume:"Baixar currículo",
-      metricYears:"Anos de experiência", metricProjects:"Projetos entregues", metricTalks:"Ganhos de FPS"
+      metricYearsValue:"{years}+", metricYears:"Anos de experiência", metricProjects:"Projetos entregues", metricTalks:"Ganhos de FPS"
     },
     about:{
       eyebrow:"Sobre",
-      title:"7+ anos entregando jogos e apps com qualidade",
+      title:"{years}+ anos entregando jogos e apps com qualidade",
       p1:"Sou Desenvolvedor Unity sênior, construindo jogos e produtos XR para mobile, console e plataformas imersivas. Sou especializado em arquitetura modular de jogos e performance em runtime, levando sistemas de frame rates injogáveis a 60 FPS estáveis, redesenhando o fluxo de dados CPU/GPU e reduzindo pressão de garbage collection.",
       p2:"Já entreguei produtos Unity para a Samsung, orientei times de desenvolvedores e passei 3+ anos ensinando Unity, game design e Scrum como Instrutor de Desenvolvimento de Jogos. Fora do trabalho com clientes, sou fã de carteirinha de Star Wars e jogador raiz de RPG de mesa, traições dos dados incluídas."
     },
@@ -1278,11 +1278,12 @@ function renderTalks(lang){
 
 function applyStaticI18n(lang){
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  const years = new Date().getFullYear() - 2019;
   document.querySelectorAll("[data-i18n]").forEach(node => {
     const path = node.getAttribute("data-i18n").split(".");
     let val = I18N[lang];
     for (const key of path) val = val && val[key];
-    if (typeof val === "string") node.textContent = val;
+    if (typeof val === "string") node.textContent = val.replace("{years}", years);
   });
   document.getElementById("footerRights").textContent =
     lang === "pt" ? "© 2026 André Oliveira. Todos os direitos reservados." : "© 2026 André Oliveira. All rights reserved.";
