@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>André Oliveira - Senior Unity Developer</title>
-<meta name="description" content="Portfolio for André Oliveira, Senior Unity Developer: experience timeline, shipped games, skills, recommendations, awards and contact. EN/PT and light/dark toggles.">
+<meta name="description" content="Portfolio for André Oliveira, Senior Unity Developer: experience timeline, shipped games, skills, recommendations, courses and contact. EN/PT and light/dark toggles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -250,24 +250,24 @@
 
   /* ---------- staggered item entrance, driven by the ancestor .reveal.in ---------- */
   .timeline-item, .skill-row, .rec-card, .project-card, .xr-card,
-  #awardsList .list-row, #talksList .list-row{
+  #coursesList .list-row, #talksList .list-row{
     opacity:0; transform:translateY(14px);
     transition:opacity .5s ease, transform .5s ease;
   }
   .reveal.in .timeline-item, .reveal.in .skill-row, .reveal.in .rec-card, .reveal.in .project-card, .reveal.in .xr-card,
-  .reveal.in #awardsList .list-row, .reveal.in #talksList .list-row{
+  .reveal.in #coursesList .list-row, .reveal.in #talksList .list-row{
     opacity:1; transform:none;
   }
   .timeline-item:nth-child(1), .skill-row:nth-child(1), .rec-card:nth-child(1), .project-card:nth-child(1), .xr-card:nth-child(1),
-  #awardsList .list-row:nth-child(1), #talksList .list-row:nth-child(1){ transition-delay:.05s; }
+  #coursesList .list-row:nth-child(1), #talksList .list-row:nth-child(1){ transition-delay:.05s; }
   .timeline-item:nth-child(2), .skill-row:nth-child(2), .rec-card:nth-child(2), .project-card:nth-child(2), .xr-card:nth-child(2),
-  #awardsList .list-row:nth-child(2), #talksList .list-row:nth-child(2){ transition-delay:.12s; }
+  #coursesList .list-row:nth-child(2), #talksList .list-row:nth-child(2){ transition-delay:.12s; }
   .timeline-item:nth-child(3), .skill-row:nth-child(3), .rec-card:nth-child(3), .project-card:nth-child(3), .xr-card:nth-child(3),
-  #awardsList .list-row:nth-child(3), #talksList .list-row:nth-child(3){ transition-delay:.19s; }
+  #coursesList .list-row:nth-child(3), #talksList .list-row:nth-child(3){ transition-delay:.19s; }
   .timeline-item:nth-child(4), .skill-row:nth-child(4), .rec-card:nth-child(4), .project-card:nth-child(4), .xr-card:nth-child(4),
-  #awardsList .list-row:nth-child(4), #talksList .list-row:nth-child(4){ transition-delay:.26s; }
+  #coursesList .list-row:nth-child(4), #talksList .list-row:nth-child(4){ transition-delay:.26s; }
   .timeline-item:nth-child(5), .skill-row:nth-child(5), .rec-card:nth-child(5),
-  #awardsList .list-row:nth-child(5), #talksList .list-row:nth-child(5){ transition-delay:.33s; }
+  #coursesList .list-row:nth-child(5), #talksList .list-row:nth-child(5){ transition-delay:.33s; }
   .skill-row:nth-child(6){ transition-delay:.40s; }
 
   /* ---------- hero ---------- */
@@ -525,7 +525,7 @@
   .rec-name{ font-size:.88rem; font-weight:600; }
   .rec-role{ font-size:.78rem; color:var(--fg-subtle); }
 
-  /* ---------- awards / talks (two-up list layout) ---------- */
+  /* ---------- courses / talks (two-up list layout) ---------- */
   .split-two{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
   @media (max-width:820px){ .split-two{ grid-template-columns:1fr; gap:64px; } }
   .list-block h3{ font-family:"Space Grotesk"; font-size:1.15rem; font-weight:600; margin-bottom:20px; }
@@ -771,16 +771,16 @@
 
   <hr class="section-divider">
 
-  <!-- ================= AWARDS + TALKS ================= -->
+  <!-- ================= COURSES + TALKS ================= -->
   <section id="recognition">
     <div class="wrap reveal">
       <div class="split-two">
         <div class="list-block">
-          <h3 data-i18n="awards.title">Awards &amp; certifications</h3>
-          <div id="awardsList"></div>
+          <h3 data-i18n="courses.title">Courses &amp; Certifications</h3>
+          <div id="coursesList"></div>
         </div>
         <div class="list-block">
-          <h3 data-i18n="talks.title">Talks &amp; workshops</h3>
+          <h3 data-i18n="talks.title">Workshops, Talks and Mentoring</h3>
           <div id="talksList"></div>
         </div>
       </div>
@@ -879,8 +879,8 @@ const I18N = {
     stack:{ eyebrow:"Toolbox", title:"What I build with", core:"CORE DEVELOPMENT", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"TOOLS & PLATFORMS" },
     skills:{ eyebrow:"Skills", title:"Where I add the most value" },
     recommendations:{ eyebrow:"Recommendations", title:"What it's like to work together" },
-    awards:{ title:"Awards & certifications" },
-    talks:{ title:"Community & mentoring" },
+    courses:{ title:"Courses & Certifications" },
+    talks:{ title:"Workshops, Talks and Mentoring" },
     contact:{
       eyebrow:"Contact", title:"Let's talk about your project",
       lead:"Open to Senior Unity Developer, Gameplay Programmer and Game Developer roles, remote and relocation included. I read everything that comes in on this email:",
@@ -914,8 +914,8 @@ const I18N = {
     stack:{ eyebrow:"Ferramentas", title:"Com o que eu construo", core:"DESENVOLVIMENTO CORE", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"FERRAMENTAS & PLATAFORMAS" },
     skills:{ eyebrow:"Habilidades", title:"Onde eu entrego mais valor" },
     recommendations:{ eyebrow:"Recomendações", title:"Como é trabalhar junto" },
-    awards:{ title:"Prêmios e certificações" },
-    talks:{ title:"Comunidade e mentoria" },
+    courses:{ title:"Cursos e Certificações" },
+    talks:{ title:"Workshops, Palestras e Mentoria" },
     contact:{
       eyebrow:"Contato", title:"Vamos falar sobre seu projeto",
       lead:"Aberto a vagas de Desenvolvedor Unity Sênior, Gameplay Programmer e Game Developer, remoto e realocação incluídos. Eu leio tudo que chega aqui nesse email:",
@@ -931,7 +931,7 @@ const I18N = {
 };
 
 /* ============================================================
-   DATA — timeline, projects, recommendations, awards, talks.
+   DATA — timeline, projects, recommendations, courses, talks.
    Each item carries its own en/pt copy so lists stay in sync.
    ============================================================ */
 const EXPERIENCE = [
@@ -1040,19 +1040,19 @@ const RECOMMENDATIONS = [
   }
 ];
 
-const AWARDS = [
+const COURSES = [
   { year:"2022", issuer:"Unity (expired 2025)", en:{ title:"Unity Certified Professional: Programmer" }, pt:{ title:"Unity Certified Professional: Programmer" } },
   { year:"2022", issuer:"Holistic3D (Udemy)", en:{ title:"Shader Development From Scratch for Unity with CG" }, pt:{ title:"Shader Development From Scratch for Unity with CG" } },
-  { year:"2017", issuer:"CalArts (Coursera)", en:{ title:"Game Design: Art and Concepts Specialization" }, pt:{ title:"Game Design: Art and Concepts Specialization" } },
   { year:"2016", issuer:"CESAR", en:{ title:"Scrum Training" }, pt:{ title:"Treinamento em Scrum" } },
   { year:"2015", issuer:"Michigan State University (Coursera)", en:{ title:"Game Design and Development Specialization" }, pt:{ title:"Game Design and Development Specialization" } }
 ];
 
 const TALKS = [
-  { year:"2017", event:"31-hour game jam", link:"#", en:{ title:"V.R.I.D.O.S.: built two skeletons carrying a fragile glass through a cooperative underworld" }, pt:{ title:"V.R.I.D.O.S.: dois esqueletos carregando um vidro frágil por um submundo cooperativo" } },
-  { year:"2015-2018", event:"CESAR School", link:"#", en:{ title:"Advised student teams for the Technovation Challenge" }, pt:{ title:"Orientou equipes de alunos no Technovation Challenge" } },
-  { year:"2015-2018", event:"CESAR School", link:"#", en:{ title:"Advised student teams for SBGames" }, pt:{ title:"Orientou equipes de alunos no SBGames" } },
-  { year:"2013-2015", event:"Fábrica de Software (UNIPÊ)", link:"#", en:{ title:"Volunteer and scholarship game development, university extension program" }, pt:{ title:"Desenvolvimento de jogos voluntário e com bolsa em programa de extensão universitária" } }
+  { year:"2022", event:"1 hour webinar", link:"#", en:{ title:"Unity Pro Tips" }, pt:{ title:"Unity Pro Tips" } },
+  { year:"2022", event:"1.5 hour talk", link:"#", en:{ title:"Introduction to Software Architecture with Scriptable Objects" }, pt:{ title:"Introdução à Arquitetura de Software com Scriptable Objects" } },
+  { year:"2022", event:"1.5 hour talk", link:"#", en:{ title:"Introduction to Unit Tests in Unity" }, pt:{ title:"Introdução a Testes Unitários em Unity" } },
+  { year:"2018", event:"3-day workshop, 2.5h per day", link:"#", en:{ title:"Agile Thinking" }, pt:{ title:"Pensamento Ágil" } },
+  { year:"2015-2018", event:"CESAR School", link:"#", en:{ title:"Advised student teams for SBGames and Technovation Challenge" }, pt:{ title:"Orientou equipes de alunos no SBGames e no Technovation Challenge" } }
 ];
 
 /* ============================================================
@@ -1253,9 +1253,9 @@ function renderRecommendations(lang){
   }).join("");
 }
 
-function renderAwards(lang){
-  const el = document.getElementById("awardsList");
-  el.innerHTML = AWARDS.map(a => `<div class="list-row">
+function renderCourses(lang){
+  const el = document.getElementById("coursesList");
+  el.innerHTML = COURSES.map(a => `<div class="list-row">
     <span class="list-year">${a.year}</span>
     <div class="list-body">
       <div class="list-title">${a[lang].title}</div>
@@ -1320,7 +1320,7 @@ function setLanguage(lang){
   renderProjects(lang);
   renderSkills(lang);
   renderRecommendations(lang);
-  renderAwards(lang);
+  renderCourses(lang);
   renderTalks(lang);
   updateLangButton(lang);
   resetFormStatus();
