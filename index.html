@@ -368,6 +368,16 @@
   .timeline-bullets{ margin:14px 0 0; padding-left:18px; color:var(--fg-muted); font-size:.92rem; }
   .timeline-bullets li{ margin-bottom:6px; }
   .timeline-bullets li:last-child{ margin-bottom:0; }
+  .timeline-desc{ margin:12px 0 0; color:var(--fg-muted); font-size:.92rem; max-width:62ch; }
+  @media (min-width:821px){
+    .timeline.horizontal{ display:grid; grid-template-columns:repeat(3, 1fr); gap:36px; padding:28px 0 0; }
+    .timeline.horizontal::before{
+      left:0; right:0; top:5px; bottom:auto; width:auto; height:2px;
+      background:linear-gradient(90deg, var(--brand-a), var(--border) 85%);
+    }
+    .timeline.horizontal .timeline-item{ padding-bottom:0; }
+    .timeline.horizontal .timeline-dot{ left:0; top:-28px; }
+  }
 
   /* ---------- projects ---------- */
   .project-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
@@ -771,6 +781,19 @@
 
   <hr class="section-divider">
 
+  <!-- ================= EDUCATION ================= -->
+  <section id="education">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="education.eyebrow">Education</span>
+        <h2 data-i18n="education.title">Where I studied</h2>
+      </div>
+      <div class="timeline horizontal" id="educationList"></div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
   <!-- ================= COURSES + TALKS ================= -->
   <section id="recognition">
     <div class="wrap reveal">
@@ -879,6 +902,7 @@ const I18N = {
     stack:{ eyebrow:"Toolbox", title:"What I build with", core:"CORE DEVELOPMENT", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"TOOLS & PLATFORMS" },
     skills:{ eyebrow:"Skills", title:"Where I add the most value" },
     recommendations:{ eyebrow:"Recommendations", title:"What it's like to work together" },
+    education:{ eyebrow:"Education", title:"Where I studied" },
     courses:{ title:"Courses & Certifications" },
     talks:{ title:"Workshops, Talks and Mentoring" },
     contact:{
@@ -914,6 +938,7 @@ const I18N = {
     stack:{ eyebrow:"Ferramentas", title:"Com o que eu construo", core:"DESENVOLVIMENTO CORE", gameplay:"UNITY & GAMEPLAY", performance:"PERFORMANCE & XR", tools:"FERRAMENTAS & PLATAFORMAS" },
     skills:{ eyebrow:"Habilidades", title:"Onde eu entrego mais valor" },
     recommendations:{ eyebrow:"Recomendações", title:"Como é trabalhar junto" },
+    education:{ eyebrow:"Formação", title:"Onde estudei" },
     courses:{ title:"Cursos e Certificações" },
     talks:{ title:"Workshops, Palestras e Mentoria" },
     contact:{
@@ -1037,6 +1062,28 @@ const RECOMMENDATIONS = [
     initials:"JS", img:"assets/images/Jackson.jpg",
     en:{ quote:"I had the opportunity to work with an extremely competent professional, who stands out for his ability to prioritize deadlines and deliver efficient solutions to complex challenges. He consistently demonstrates proactivity in seeking out new technologies and possesses excellent interpersonal communication skills.", name:"Jackson Daniel Silva Santana", role:"Unity Game Developer (same team)" },
     pt:{ quote:"Tive a oportunidade de trabalhar com um profissional extremamente competente, que se destaca pela capacidade de priorizar prazos e entregar soluções eficientes pra desafios complexos. Demonstra consistentemente proatividade na busca por novas tecnologias e possui excelentes habilidades de comunicação interpessoal.", name:"Jackson Daniel Silva Santana", role:"Unity Game Developer (mesma equipe)" }
+  }
+];
+
+const EDUCATION = [
+  {
+    current:true,
+    en:{ period:"Sep 2026 – Present", title:"Software Engineering with Artificial Intelligence", school:"Postgraduate Certificate · CESAR School",
+      desc:"Software engineering and architecture applied to AI-enabled systems, including LLMs, agents, automation and AI-assisted development." },
+    pt:{ period:"Set 2026 – Atual", title:"Engenharia de Software com Inteligência Artificial", school:"Pós-graduação · CESAR School",
+      desc:"Engenharia e arquitetura de software aplicadas a sistemas com IA, incluindo LLMs, agentes, automação e desenvolvimento assistido por IA." }
+  },
+  {
+    en:{ period:"2020 – 2021", title:"Game Development", school:"Postgraduate Certificate · University Center Senac",
+      desc:"Specialization in game development, expanding my background in programming, game design and production." },
+    pt:{ period:"2020 – 2021", title:"Desenvolvimento de Jogos", school:"Pós-graduação · Centro Universitário Senac",
+      desc:"Especialização em desenvolvimento de jogos, ampliando minha base em programação, game design e produção." }
+  },
+  {
+    en:{ period:"2013 – 2015", title:"Systems for Internet", school:"Bachelor of Technology · UNIPÊ",
+      desc:"Foundation in software development, programming, databases, and web-based systems." },
+    pt:{ period:"2013 – 2015", title:"Sistemas para Internet", school:"Tecnólogo · UNIPÊ",
+      desc:"Base em desenvolvimento de software, programação, bancos de dados e sistemas web." }
   }
 ];
 
@@ -1253,6 +1300,20 @@ function renderRecommendations(lang){
   }).join("");
 }
 
+function renderEducation(lang){
+  const el = document.getElementById("educationList");
+  el.innerHTML = EDUCATION.map(item => {
+    const c = item[lang];
+    return `<div class="timeline-item ${item.current ? "current" : ""}">
+      <span class="timeline-dot"></span>
+      <div class="timeline-period">${c.period}</div>
+      <div class="timeline-role">${c.title}</div>
+      <div class="timeline-company">${c.school}</div>
+      <p class="timeline-desc">${c.desc}</p>
+    </div>`;
+  }).join("");
+}
+
 function renderCourses(lang){
   const el = document.getElementById("coursesList");
   el.innerHTML = COURSES.map(a => `<div class="list-row">
@@ -1322,6 +1383,7 @@ function setLanguage(lang){
   renderProjects(lang);
   renderSkills(lang);
   renderRecommendations(lang);
+  renderEducation(lang);
   renderCourses(lang);
   renderTalks(lang);
   updateLangButton(lang);
